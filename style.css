@@ -1,0 +1,113 @@
+/* reset browser css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    margin: auto;
+    max-width: 1440px;
+    height: 72px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a {
+    color: #555;
+    text-decoration: none;
+}
+h1, h2, h3 {
+    font-family: "Bebas Neue", sans-serif;
+    padding-bottom: 20px;
+}
+
+/* navbar */
+#navbar {
+    background: #FFFFFF;
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+    transition: filter 0.3s ease;
+}
+.logo:hover {
+    filter: brightness(1.4);
+}
+.logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+.icon-box {
+    background-color: #F9851FFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    overflow: hidden;
+}
+#navbar h1 a {
+    font-family: inherit;
+    font-weight: 700;
+    padding-top: 20px;
+    font-size: 28px;
+    color: #F9851FFF;
+    text-transform: uppercase;
+}
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+#navbar ul li {
+    margin-left: 10px;
+}
+#navbar a {
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+#navbar ul li a:hover,
+#navbar ul li a.current {
+    background: #F3F4F6FF;
+    color: #F9851FFF;
+    border-radius: 6px;
+}
+
+/* showcase */
+#showcase {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("img/riding.jpg") no-repeat center center/cover;
+    height: 600px;
+}
+#showcase .showcase-content {
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 136px;
+}
+#showcase .showcase-content h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 60px;
+    line-height: 75px;
+    font-weight: 800;
+}
+#showcase .showcase-content p {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    line-height: 33px;
+    font-weight: 500;
+}
