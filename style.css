@@ -1,4 +1,4 @@
-/* reset browser css */
+/* --- Reset & Base Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,38 +6,43 @@
 }
 
 :root {
-    --primary-color: #F9851FFF;
+    --primary-color: #F9851F;
     --light-color: #FFFFFF;
-    --dark-color: #171A1FFF;
+    --dark-color: #171A1F;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
+    background-color: #FAFAFA;
 }
+
 a {
     text-decoration: none;
     color: inherit;
- }
+}
+
 ul {
     list-style: none;
 }
 
-/* basic style */
-.container {
-    margin: auto;
-    max-width: 1440px;
-    padding: 0 2rem;
-    overflow: auto;
-}
-.text-primary {
-    color: var(--primary-color);
-}
 h1, h2, h3 {
     font-family: "Bebas Neue", sans-serif;
 }
 
-/* Buttons */
+/* --- Helper Classes & Containers --- */
+.container {
+    margin: auto;
+    max-width: 1440px;
+    padding: 0 2rem;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+/* --- Buttons --- */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -45,6 +50,7 @@ h1, h2, h3 {
     cursor: pointer;
     border-radius: 10px;
     font-weight: 500;
+    transition: background 0.2s ease;
 }
 
 .btn-primary {
@@ -55,34 +61,40 @@ h1, h2, h3 {
 .btn-primary:hover {
     background: #e67610;
 }
+
 .btn-outline {
-    background: #ffffff1a;
+    background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    border: 1px solid #ffffff40;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(4px);
 }
 
 .btn-outline:hover {
-    background: #ffffff33;
-    border-color: #ffffff66;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* navbar */
+/* --- Navbar --- */
 #navbar {
     background: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
 }
+
 #navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 72px;
 }
+
 #navbar ul {
     display: flex;
 }
+
 #navbar ul li {
     margin-left: 10px;
 }
+
 #navbar ul li a {
     font-size: 14px;
     font-weight: 500;
@@ -91,31 +103,38 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
 }
+
 #navbar h1 a {
     font-size: 30px;
- }
+}
+
 #navbar ul li a:hover,
 #navbar ul li a.current {
-    background: #F3F4F6FF;
-    color: #F9851FFF;
+    background: #F3F4F6;
+    color: #F9851F;
     border-radius: 6px;
 }
+
 .logo {
     display: flex;
     align-items: center;
     height: 100%;
 }
+
 .logo:hover {
-    filter: brightness(1.4);
+    filter: brightness(1.1);
 }
+
 .logo img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 60%;
+    max-height: 60%;
     object-fit: contain;
 }
+
 .icon-box {
-    background-color: #F9851FFF;
+    background-color: #F9851F;
     width: 40px;
     height: 40px;
     border-radius: 8px;
@@ -126,45 +145,53 @@ h1, h2, h3 {
     flex-shrink: 0;
 }
 
-/* showcase */
+/* --- Index: Showcase --- */
 #showcase {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
     url("img/riding.jpg") no-repeat center center/cover;
     height: 600px;
 }
+
 #showcase .showcase-content {
     color: var(--light-color);
     padding-top: 140px;
     width: 680px;
 }
+
 #showcase .showcase-content h1 {
     font-size: 60px;
     line-height: 75px;
     font-weight: 800;
 }
+
 #showcase .showcase-content h2 {
     padding-top: 20px;
     font-size: 20px;
     font-weight: 500;
+    line-height: 1.5;
 }
+
 .showcase-buttons {
     margin-top: 40px;
     display: flex;
     gap: 20px;
 }
 
-/* Features Section Styling */
+/* --- Index: Features --- */
 #features {
     padding: 80px 0;
 }
+
 .features-heading {
     margin-bottom: 50px;
 }
+
 .features-heading h2 {
     font-size: 32px;
     font-weight: 800;
     letter-spacing: 0.5px;
 }
+
 .heading-line {
     width: 60px;
     height: 5px;
@@ -172,28 +199,30 @@ h1, h2, h3 {
     margin-top: 12px;
     border-radius: 2px;
 }
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-/* Cards Section Styling */
 .card {
     background: #ffffff;
     border: 1px solid #f3f4f6;
     border-radius: 12px;
     padding: 32px 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* Clean, subtle shadows */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
+
 .icon-wrapper {
     background-color: #fff9f5;
     width: 44px;
@@ -204,17 +233,20 @@ h1, h2, h3 {
     align-items: center;
     margin-bottom: 24px;
 }
+
 .icon-wrapper img {
     width: 20px;
     height: 20px;
     object-fit: contain;
 }
+
 .card h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 16px;
     letter-spacing: 0.5px;
 }
+
 .card p {
     font-size: 14px;
     color: #55585d;
@@ -222,42 +254,47 @@ h1, h2, h3 {
     margin-bottom: 32px;
     flex-grow: 1;
 }
+
 .card-link {
     font-size: 14px;
     font-weight: 500;
     color: var(--primary-color);
     transition: color 0.2s ease;
 }
-.card-link:hover {
+
+.card:hover .card-link {
     color: #e67610;
     text-decoration: underline;
 }
 
-/* Tips Section Styling */
+/* --- Index: Tips --- */
 #tips-section {
     padding: 60px 0 80px 0;
-    border-top: 1px solid #f3f4f6;
+    border-top: 1px solid #e5e7eb;
 }
+
 .tips-heading {
     margin-bottom: 40px;
 }
+
 .tips-heading h2 {
     font-size: 28px;
     font-weight: 800;
     margin-bottom: 8px;
     letter-spacing: 0.5px;
 }
+
 .tips-heading p {
     font-size: 15px;
     color: #6b7280;
 }
+
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* Individual Tip Card */
 .tip-card {
     background: #ffffff;
     border: 1px solid #e5e7eb;
@@ -268,6 +305,7 @@ h1, h2, h3 {
     gap: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
 }
+
 .tip-icon-box {
     background-color: #eff6ff;
     width: 40px;
@@ -278,13 +316,301 @@ h1, h2, h3 {
     align-items: center;
     flex-shrink: 0;
 }
+
 .tip-icon-box img {
     width: 18px;
     height: 18px;
     object-fit: contain;
 }
+
 .tip-card p {
     font-size: 13.5px;
     color: #374151;
     line-height: 1.5;
+}
+
+/* --- Index: About --- */
+#about-section {
+    padding: 80px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+#about-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+#about-section p {
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.about-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #171a1f;
+}
+
+.list-icon {
+    background-color: #ffedd5;
+    color: #f9851f;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.about-image-box {
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Drivetech: Showcase --- */
+#drivetech-showcase {
+    background-color: #F8F9FA;
+    padding: 60px 0 80px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+#drivetech-showcase h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #171A1F;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.showcase-lead {
+    font-size: 15px;
+    color: #4B5563;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.safety-alert {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFF7ED;
+    border: 1px solid #FFEDD5;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #C2410C;
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+.ohum-alert {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* --- Drivetech: Attack Position --- */
+#attack-position-section {
+    padding: 80px 0;
+}
+
+.drivetech-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+#attack-position-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #171A1F;
+    letter-spacing: 0.5px;
+}
+
+.heading-line-short {
+    width: 40px;
+    height: 4px;
+    background-color: #F9851F;
+    margin: 12px 0 24px 0;
+    border-radius: 2px;
+}
+
+.section-intro {
+    font-size: 16px;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.numbered-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.numbered-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.numbered-list li:last-child {
+    border-bottom: none;
+}
+
+.list-number {
+    background-color: #F9851F;
+    color: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.list-text {
+    font-size: 14.5px;
+    color: #171A1F;
+    font-weight: 400;
+}
+
+/* muuda v]ibolla -----------------------------------------------------------*/
+.drivetech-image-box {
+    width: 100%;
+    height: 420px;
+    background-color: #F3F4F6;
+    border: 1px dashed #D1D5DB;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.drivetech-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Footer --- */
+#main-footer {
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    padding: 60px 0 40px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.footer-logo h3 {
+    font-size: 20px;
+    color: #f9851f;
+    letter-spacing: 0.5px;
+}
+
+.icon-box-small {
+    background-color: #f9851f;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-box-small img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #6b7280;
+    max-width: 320px;
+    line-height: 1.6;
+}
+
+#main-footer h4 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    color: #171a1f;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav ul li a {
+    font-size: 14px;
+    color: #4b5563;
+    transition: color 0.2s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #f9851f;
+}
+
+.footer-info p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.footer-info .disclaimer {
+    font-size: 12px;
+    color: #9ca3af;
+    font-style: italic;
 }
