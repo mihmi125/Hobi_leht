@@ -27,7 +27,7 @@ ul {
     list-style: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: "Bebas Neue", sans-serif;
 }
 
@@ -147,7 +147,8 @@ h1, h2, h3 {
 
 /* --- Index: Showcase --- */
 #showcase {
-    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1)),
+    /* FIXED: Adjusted overlay alpha from 1 to transparent 0.5/0.7 so the background picture is visible */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url("img/riding.jpg") no-repeat center center/cover;
     height: 600px;
 }
@@ -533,4 +534,205 @@ h1, h2, h3 {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+#exercises-section {
+    padding: 60px 0 100px 0;
+    border-top: 1px solid #E5E7EB;
+}
+
+.exercises-heading {
+    margin-bottom: 40px;
+}
+
+.exercises-heading h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.exercises-heading p {
+    font-size: 15px;
+    color: #6B7280;
+}
+
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.exercise-card {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.badge-beginner {
+    background-color: #F3F4F6;
+    color: #4B5563;
+}
+
+.badge-intermediate {
+    background-color: #FFF7ED;
+    color: #F9851F;
+}
+
+.duration {
+    font-size: 13px;
+    color: #6B7280;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-clock {
+    font-style: normal;
+    font-size: 12px;
+}
+
+.exercise-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+    color: #171A1F;
+}
+
+.exercise-card p {
+    font-size: 14px;
+    color: #55585d;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.exercise-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #F9851F;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    align-self: flex-start;
+}
+
+.exercise-card:hover .exercise-link {
+    color: #e67610;
+    text-decoration: underline;
+}
+
+/* --- Footer Styles --- */
+#main-footer {
+    background-color: var(--dark-color);
+    color: #9CA3AF;
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand .footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.footer-brand h3 {
+    color: var(--light-color);
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.icon-box-small {
+    background-color: var(--primary-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.icon-box-small img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 360px;
+}
+
+.footer-nav h4,
+.footer-info h4 {
+    color: var(--light-color);
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-nav ul li a {
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-info p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-info .disclaimer {
+    font-size: 12px;
+    color: #6B7280;
+    margin-top: 12px;
+}
+
+/* Responsive adjust for smaller screens */
+@media(max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
