@@ -16,6 +16,7 @@ body {
     line-height: 1.6;
     color: var(--dark-color);
     background-color: #FAFAFA;
+    padding-top: 72px;
 }
 
 a {
@@ -78,6 +79,11 @@ h1, h2, h3, h4 {
 #navbar {
     background: #FFFFFF;
     border-bottom: 1px solid #E5E7EB;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
 }
 
 #navbar .container {
@@ -214,7 +220,7 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -562,22 +568,6 @@ h1, h2, h3, h4 {
     gap: 24px;
 }
 
-.exercise-card {
-    background: #FFFFFF;
-    border: 1px solid #F3F4F6;
-    border-radius: 12px;
-    padding: 28px 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.exercise-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-}
-
 .card-meta {
     display: flex;
     justify-content: space-between;
@@ -613,35 +603,6 @@ h1, h2, h3, h4 {
 .icon-clock {
     font-style: normal;
     font-size: 12px;
-}
-
-.exercise-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-    color: #171A1F;
-}
-
-.exercise-card p {
-    font-size: 14px;
-    color: #55585d;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    flex-grow: 1;
-}
-
-.exercise-link {
-    font-size: 14px;
-    font-weight: 500;
-    color: #F9851F;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
-    align-self: flex-start;
-}
-
-.exercise-card:hover .exercise-link {
-    color: #e67610;
-    text-decoration: underline;
 }
 
 /* --- Footer Styles --- */
@@ -728,10 +689,15 @@ h1, h2, h3, h4 {
     margin-top: 12px;
 }
 
-/* Responsive adjust for smaller screens */
+/* Mobiilne reageeruvus tagasisidena gridile */
 @media(max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
+    .footer-grid,
+    .about-grid,
+    .drivetech-grid,
+    .features-grid,
+    .tips-grid,
+    .exercises-grid {
+        grid-template-columns: 1fr !important;
         gap: 30px;
     }
 }
