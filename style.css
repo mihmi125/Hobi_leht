@@ -147,7 +147,6 @@ h1, h2, h3, h4 {
 
 /* --- Index: Showcase --- */
 #showcase {
-    /* FIXED: Adjusted overlay alpha from 1 to transparent 0.5/0.7 so the background picture is visible */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url("img/riding.jpg") no-repeat center center/cover;
     height: 600px;
