@@ -441,9 +441,13 @@ h1, h2, h3 {
     object-fit: contain;
 }
 
-/* --- Drivetech: Attack Position --- */
-#attack-position-section {
+/* --- Drivetech --- */
+.drivetech-section {
     padding: 80px 0;
+}
+
+#turns-section {
+    background-color: #ffffff;
 }
 
 .drivetech-grid {
@@ -453,7 +457,11 @@ h1, h2, h3 {
     align-items: flex-start;
 }
 
-#attack-position-section h2 {
+.drivetech-grid.grid-reversed {
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.drivetech-content h2 {
     font-size: 36px;
     font-weight: 800;
     color: #171A1F;
@@ -512,15 +520,12 @@ h1, h2, h3 {
     font-weight: 400;
 }
 
-/* muuda v]ibolla -----------------------------------------------------------*/
 .drivetech-image-box {
     width: 100%;
     height: 420px;
-    background-color: #F3F4F6;
-    border: 1px dashed #D1D5DB;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .drivetech-img {
@@ -528,89 +533,4 @@ h1, h2, h3 {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-/* --- Footer --- */
-#main-footer {
-    background-color: #f9fafb;
-    border-top: 1px solid #e5e7eb;
-    padding: 60px 0 40px 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.footer-logo h3 {
-    font-size: 20px;
-    color: #f9851f;
-    letter-spacing: 1px;
-}
-
-.icon-box-small {
-    background-color: #f9851f;
-    width: 30px;
-    height: 30px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon-box-small img {
-    max-width: 70%;
-    max-height: 70%;
-    object-fit: contain;
-}
-
-.footer-brand p {
-    font-size: 14px;
-    color: #6b7280;
-    max-width: 320px;
-    line-height: 1.6;
-}
-
-#main-footer h4 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
-    color: #171a1f;
-    margin-bottom: 16px;
-    letter-spacing: 1px;
-}
-
-.footer-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-nav ul li a {
-    font-size: 14px;
-    color: #4b5563;
-    transition: color 0.2s ease;
-}
-
-.footer-nav ul li a:hover {
-    color: #f9851f;
-}
-
-.footer-info p {
-    font-size: 14px;
-    color: #4b5563;
-    margin-bottom: 8px;
-}
-
-.footer-info .disclaimer {
-    font-size: 12px;
-    color: #9ca3af;
-    font-style: italic;
 }
