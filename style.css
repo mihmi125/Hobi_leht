@@ -1,35 +1,28 @@
 /* ==========================================================================
    style.css — Mudased Käed ja Kiired Ringid
-   Main stylesheet for all pages. Organised sections:
-     1. Reset & Base
-     2. Helpers & Containers
-     3. Buttons
-     4. Navbar (desktop + mobile hamburger)
-     5. Index: Showcase Hero
-     6. Index: Features Grid
-     7. Index: Tips
-     8. Index: About
-     9. Drivetech / Maintenance showcase banner
-    10. Drivetech content sections
-    11. Exercises Grid
-    12. Equipment page
-    13. Gallery / Slideshow
-    14. Footer
-    15. Media Queries (mobile-first overrides)
+   Sections:
+     1.  Reset & Base
+     2.  Layout helpers
+     3.  Buttons
+     4.  Navbar
+     5.  Hero (index)
+     6.  Features grid (index)
+     7.  Tips (index)
+     8.  About (index)
+     9.  Page header (drivetech / maintenance / gallery)
+    10.  Guide sections (drivetech / maintenance)
+    11.  Exercises grid (drivetech)
+    12.  Equipment page
+    13.  Gallery / slideshow
+    14.  Footer
+    15.  Media queries
    ========================================================================== */
 
 
-/* ==========================================================================
-   1. Reset & Base
-   ========================================================================== */
+/* 1. Reset & Base ---------------------------------------------------------- */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* CSS custom properties — change these to retheme the whole site */
 :root {
     --primary-color: #F9851F;
     --primary-dark:  #e67610;
@@ -50,42 +43,20 @@ body {
     padding-top: var(--navbar-height);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+img { max-width: 100%; }
 
-ul {
-    list-style: none;
-}
-
-h1, h2, h3, h4 {
-    font-family: "Bebas Neue", sans-serif;
-}
-
-img {
-    max-width: 100%;
-}
+h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
 
 
-/* ==========================================================================
-   2. Helpers & Containers
-   ========================================================================== */
+/* 2. Layout helpers -------------------------------------------------------- */
 
-.container {
-    margin: auto;
-    max-width: 1440px;
-    padding: 0 2rem;
-}
-
-.text-primary {
-    color: var(--primary-color);
-}
+.container   { margin: auto; max-width: 1440px; padding: 0 2rem; }
+.text-primary { color: var(--primary-color); }
 
 
-/* ==========================================================================
-   3. Buttons
-   ========================================================================== */
+/* 3. Buttons --------------------------------------------------------------- */
 
 .btn {
     display: inline-block;
@@ -98,39 +69,28 @@ img {
     transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-primary {
-    background: var(--primary-color);
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-}
+.btn-primary         { background: var(--primary-color); color: #fff; }
+.btn-primary:hover   { background: var(--primary-dark); }
 
 .btn-outline {
     background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(4px);
 }
-
 .btn-outline:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
 }
 
 
-/* ==========================================================================
-   4. Navbar
-   ========================================================================== */
+/* 4. Navbar ---------------------------------------------------------------- */
 
 #navbar {
-    background: #FFFFFF;
+    background: #fff;
     border-bottom: 1px solid var(--grey-200);
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+    top: 0; right: 0; left: 0;
     z-index: 999;
 }
 
@@ -147,10 +107,7 @@ img {
     height: 100%;
     transition: filter 0.2s ease;
 }
-
-.logo:hover {
-    filter: brightness(1.1);
-}
+.logo:hover { filter: brightness(1.1); }
 
 .logo img {
     max-width: 60%;
@@ -170,17 +127,9 @@ img {
     flex-shrink: 0;
 }
 
-#navbar h1 a {
-    font-size: 30px;
-}
-
-#navbar ul {
-    display: flex;
-}
-
-#navbar ul li {
-    margin-left: 10px;
-}
+#navbar h1 a  { font-size: 30px; }
+#navbar ul    { display: flex; }
+#navbar ul li { margin-left: 10px; }
 
 #navbar ul li a {
     font-size: 14px;
@@ -212,10 +161,7 @@ img {
     border-radius: 6px;
     transition: background 0.2s ease;
 }
-
-.menu-toggle:hover {
-    background: var(--grey-100);
-}
+.menu-toggle:hover { background: var(--grey-100); }
 
 .menu-toggle span {
     display: block;
@@ -231,11 +177,9 @@ img {
 .menu-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 
-/* ==========================================================================
-   5. Index: Showcase
-   ========================================================================== */
+/* 5. Hero (index) ---------------------------------------------------------- */
 
-#showcase {
+#hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
     url("img/riding.jpg") no-repeat center center / cover;
     min-height: 600px;
@@ -243,19 +187,19 @@ img {
     align-items: center;
 }
 
-#showcase .showcase-content {
+.hero-content {
     color: var(--light-color);
     padding: 80px 0 60px;
     max-width: 680px;
 }
 
-#showcase .showcase-content h1 {
+.hero-content h1 {
     font-size: clamp(32px, 5vw, 60px);
     line-height: 1.15;
     font-weight: 800;
 }
 
-#showcase .showcase-content h2 {
+.hero-content h2 {
     padding-top: 20px;
     font-size: clamp(15px, 2vw, 20px);
     font-family: 'Roboto', sans-serif;
@@ -263,7 +207,7 @@ img {
     line-height: 2;
 }
 
-.showcase-buttons {
+.hero-buttons {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -271,29 +215,25 @@ img {
 }
 
 
-/* ==========================================================================
-   6. Index: Features Grid
-   ========================================================================== */
+/* 6. Features grid (index) ------------------------------------------------- */
 
-#features {
-    padding: 80px 0;
-}
+#features            { padding: 80px 0; }
+.features-heading    { margin-bottom: 50px; }
+.features-heading h2 { font-size: 32px; font-weight: 800; letter-spacing: 1px; }
 
-.features-heading {
-    margin-bottom: 50px;
-}
-
-.features-heading h2 {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.heading-line {
+.section-bar {
     width: 60px;
     height: 5px;
     background-color: var(--primary-color);
     margin-top: 12px;
+    border-radius: 2px;
+}
+
+.section-bar--sm {
+    width: 40px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 12px 0 24px;
     border-radius: 2px;
 }
 
@@ -304,7 +244,7 @@ img {
 }
 
 .card {
-    background: #ffffff;
+    background: #fff;
     border: 1px solid var(--grey-100);
     border-radius: 12px;
     padding: 32px 24px;
@@ -313,7 +253,6 @@ img {
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -329,20 +268,10 @@ img {
     align-items: center;
     margin-bottom: 24px;
 }
+.icon-wrapper img { width: 20px; height: 20px; object-fit: contain; }
 
-.icon-wrapper img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 16px;
-    letter-spacing: 1px;
-}
-
-.card p {
+.card h3 { font-size: 20px; margin-bottom: 16px; letter-spacing: 1px; }
+.card p  {
     font-size: 14px;
     color: #55585d;
     line-height: 1.6;
@@ -356,37 +285,22 @@ img {
     color: var(--primary-color);
     transition: color 0.2s ease;
 }
-
 .card:hover .card-link {
     color: var(--primary-dark);
     text-decoration: underline;
 }
 
 
-/* ==========================================================================
-   7. Index: Tips
-   ========================================================================== */
+/* 7. Tips (index) ---------------------------------------------------------- */
 
 #tips-section {
     padding: 60px 0 80px;
     border-top: 1px solid var(--grey-200);
 }
 
-.tips-heading {
-    margin-bottom: 40px;
-}
-
-.tips-heading h2 {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
-
-.tips-heading p {
-    font-size: 15px;
-    color: var(--grey-500);
-}
+.tips-heading    { margin-bottom: 40px; }
+.tips-heading h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; letter-spacing: 1px; }
+.tips-heading p  { font-size: 15px; color: var(--grey-500); }
 
 .tips-grid {
     display: grid;
@@ -395,7 +309,7 @@ img {
 }
 
 .tip-card {
-    background: #ffffff;
+    background: #fff;
     border: 1px solid var(--grey-200);
     border-radius: 12px;
     padding: 24px;
@@ -415,23 +329,12 @@ img {
     align-items: center;
     flex-shrink: 0;
 }
+.tip-icon-box img { width: 18px; height: 18px; object-fit: contain; }
 
-.tip-icon-box img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-}
-
-.tip-card p {
-    font-size: 14px;
-    color: var(--grey-700);
-    line-height: 1.8;
-}
+.tip-card p { font-size: 14px; color: var(--grey-700); line-height: 1.8; }
 
 
-/* ==========================================================================
-   8. Index: About
-   ========================================================================== */
+/* 8. About (index) --------------------------------------------------------- */
 
 #about-section {
     padding: 80px 0;
@@ -459,13 +362,8 @@ img {
     margin-bottom: 30px;
 }
 
-.about-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.about-list li {
+.about-list      { display: flex; flex-direction: column; gap: 16px; }
+.about-list li   {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -495,25 +393,18 @@ img {
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-.about-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+.about-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 
-/* ==========================================================================
-   9. Drivetech / Maintenance / Equipment — Showcase Banner
-   ========================================================================== */
+/* 9. Page header (drivetech / maintenance / gallery) ----------------------- */
 
-#drivetech-showcase {
+.page-header {
     background-color: #F8F9FA;
     padding: 60px 0 80px;
     border-bottom: 1px solid var(--grey-200);
 }
 
-#drivetech-showcase h1 {
+.page-header h1 {
     font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
     color: var(--dark-color);
@@ -521,7 +412,7 @@ img {
     letter-spacing: 1px;
 }
 
-.showcase-lead {
+.page-lead {
     font-size: 15px;
     color: #4B5563;
     max-width: 800px;
@@ -542,46 +433,26 @@ img {
     font-size: 14px;
     font-weight: 500;
 }
-
-.ohum-alert {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-}
+.safety-alert img { width: 18px; height: 18px; object-fit: contain; }
 
 
-/* ==========================================================================
-   10. Drivetech — Content Sections
-   ========================================================================== */
+/* 10. Guide sections (drivetech / maintenance) ----------------------------- */
 
-.drivetech-section {
-    padding: 80px 0;
-}
+.guide-section { padding: 80px 0; }
 
-.drivetech-grid {
+.guide-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 60px;
     align-items: flex-start;
 }
+.guide-grid--reversed { grid-template-columns: 1fr 1.2fr; }
 
-.drivetech-grid.grid-reversed {
-    grid-template-columns: 1fr 1.2fr;
-}
-
-.drivetech-content h2 {
+.guide-text h2 {
     font-size: 36px;
     font-weight: 800;
     color: var(--dark-color);
     letter-spacing: 1px;
-}
-
-.heading-line-short {
-    width: 40px;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin: 12px 0 24px;
-    border-radius: 2px;
 }
 
 .section-intro {
@@ -591,11 +462,7 @@ img {
     margin-bottom: 35px;
 }
 
-.numbered-list {
-    display: flex;
-    flex-direction: column;
-}
-
+.numbered-list    { display: flex; flex-direction: column; }
 .numbered-list li {
     display: flex;
     align-items: center;
@@ -603,14 +470,11 @@ img {
     padding: 16px 0;
     border-bottom: 1px solid var(--grey-100);
 }
-
-.numbered-list li:last-child {
-    border-bottom: none;
-}
+.numbered-list li:last-child { border-bottom: none; }
 
 .list-number {
     background-color: var(--primary-color);
-    color: #FFFFFF;
+    color: #fff;
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -622,51 +486,28 @@ img {
     flex-shrink: 0;
 }
 
-.list-text {
-    font-size: 15px;
-    color: var(--dark-color);
-}
+.list-text { font-size: 15px; color: var(--dark-color); }
 
-.drivetech-image-box {
+.guide-image {
     width: 100%;
     height: 420px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
-
-.drivetech-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+.guide-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 
-/* ==========================================================================
-   11. Exercises Grid (drivetech.html)
-   ========================================================================== */
+/* 11. Exercises grid (drivetech) ------------------------------------------- */
 
 #exercises-section {
     padding: 60px 0 100px;
     border-top: 1px solid var(--grey-200);
 }
 
-.exercises-heading {
-    margin-bottom: 40px;
-}
-
-.exercises-heading h2 {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-.exercises-heading p {
-    font-size: 15px;
-    color: var(--grey-500);
-}
+.exercises-heading    { margin-bottom: 40px; }
+.exercises-heading h2 { font-size: 32px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+.exercises-heading p  { font-size: 15px; color: var(--grey-500); }
 
 .exercises-grid {
     display: grid;
@@ -687,16 +528,8 @@ img {
     padding: 4px 12px;
     border-radius: 6px;
 }
-
-.badge-beginner {
-    background-color: var(--grey-100);
-    color: #4B5563;
-}
-
-.badge-intermediate {
-    background-color: #FFF7ED;
-    color: var(--primary-color);
-}
+.badge-beginner     { background-color: var(--grey-100); color: #4B5563; }
+.badge-intermediate { background-color: #FFF7ED; color: var(--primary-color); }
 
 .duration {
     font-size: 13px;
@@ -706,15 +539,8 @@ img {
     gap: 4px;
 }
 
-.icon-clock {
-    font-style: normal;
-    font-size: 12px;
-}
 
-
-/* ==========================================================================
-   12. Equipment Page
-   ========================================================================== */
+/* 12. Equipment page ------------------------------------------------------- */
 
 .equipment-grid {
     display: grid;
@@ -724,14 +550,13 @@ img {
 }
 
 .equipment-card {
-    background: #ffffff;
+    background: #fff;
     border: 1px solid var(--grey-100);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .equipment-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.07);
@@ -744,22 +569,9 @@ img {
     display: block;
 }
 
-.equipment-card-body {
-    padding: 24px;
-}
-
-.equipment-card-body h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.equipment-card-body p {
-    font-size: 14px;
-    color: #55585d;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
+.equipment-card-body              { padding: 24px; }
+.equipment-card-body h3           { font-size: 22px; margin-bottom: 10px; letter-spacing: 1px; }
+.equipment-card-body p            { font-size: 14px; color: #55585d; line-height: 1.6; margin-bottom: 20px; }
 
 .eq-badge {
     display: inline-block;
@@ -769,21 +581,9 @@ img {
     border-radius: 6px;
     letter-spacing: 0.5px;
 }
-
-.eq-badge-critical {
-    background-color: #FEE2E2;
-    color: #DC2626;
-}
-
-.eq-badge-required {
-    background-color: #FFF7ED;
-    color: var(--primary-color);
-}
-
-.eq-badge-recommended {
-    background-color: var(--grey-100);
-    color: #4B5563;
-}
+.eq-badge-critical    { background-color: #FEE2E2; color: #DC2626; }
+.eq-badge-required    { background-color: #FFF7ED; color: var(--primary-color); }
+.eq-badge-recommended { background-color: var(--grey-100); color: #4B5563; }
 
 .eq-checklist {
     display: flex;
@@ -791,7 +591,6 @@ img {
     gap: 10px;
     margin-top: 12px;
 }
-
 .eq-checklist li {
     display: flex;
     align-items: center;
@@ -799,7 +598,6 @@ img {
     font-size: 14px;
     color: var(--grey-700);
 }
-
 .eq-checklist li::before {
     content: "✓";
     color: var(--primary-color);
@@ -808,9 +606,7 @@ img {
 }
 
 
-/* ==========================================================================
-   13. Gallery / Slideshow
-   ========================================================================== */
+/* 13. Gallery / slideshow -------------------------------------------------- */
 
 .gallery-wrapper {
     background-color: #11141a;
@@ -819,7 +615,7 @@ img {
     border-top: 4px solid var(--primary-color);
 }
 
-.premium-slideshow {
+.slideshow {
     display: grid;
     grid-template-columns: 1fr 2fr;
     background: #1c2029;
@@ -863,12 +659,9 @@ img {
     margin-bottom: 35px;
 }
 
-.meta-controls {
-    display: flex;
-    gap: 12px;
-}
+.meta-controls { display: flex; gap: 12px; }
 
-.nav-btn {
+.slide-nav {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.1);
     color: #fff;
@@ -882,8 +675,7 @@ img {
     font-size: 18px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.nav-btn:hover {
+.slide-nav:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
     transform: translateY(-2px);
@@ -897,32 +689,32 @@ img {
     background: #000;
 }
 
-.mySlides {
+.slide {
     position: relative;
     width: 100%;
     height: 100%;
+    opacity: 0.1;
+    transition: opacity 0.6s ease-in-out;
 }
+.slide.is-active { opacity: 1; }
 
-.mySlides img {
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transform: scale(1.08);
     transition: transform 7s cubic-bezier(0.1,1,0.1,1);
 }
+.slide.is-active img { transform: scale(1); }
 
-.mySlides.slide-active img {
-    transform: scale(1);
-}
-
-.image-overlay {
+.slide-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to right, rgba(22,25,32,0.6) 0%, transparent 40%);
     z-index: 1;
 }
 
-.slide-badge {
+.slide-counter {
     position: absolute;
     top: 25px;
     right: 25px;
@@ -938,14 +730,9 @@ img {
     z-index: 3;
 }
 
-#current-num {
-    color: var(--primary-color);
-}
+#current-num { color: var(--primary-color); }
 
-.dot-container {
-    text-align: center;
-    margin-top: 35px;
-}
+.slide-dots  { text-align: center; margin-top: 35px; }
 
 .dot {
     cursor: pointer;
@@ -957,26 +744,14 @@ img {
     border-radius: 2px;
     transition: all 0.4s ease;
 }
-
 .dot.active,
 .dot:hover {
     background-color: var(--primary-color);
     width: 55px;
 }
 
-.cool-fade {
-    opacity: 0.1;
-    transition: opacity 0.6s ease-in-out;
-}
 
-.cool-fade.slide-active {
-    opacity: 1;
-}
-
-
-/* ==========================================================================
-   14. Footer
-   ========================================================================== */
+/* 14. Footer --------------------------------------------------------------- */
 
 #main-footer {
     background-color: var(--dark-color);
@@ -1014,18 +789,9 @@ img {
     margin-right: 12px;
     flex-shrink: 0;
 }
+.icon-box-small img { max-width: 60%; max-height: 60%; object-fit: contain; }
 
-.icon-box-small img {
-    max-width: 60%;
-    max-height: 60%;
-    object-fit: contain;
-}
-
-.footer-brand p {
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 360px;
-}
+.footer-brand p { font-size: 14px; line-height: 1.6; max-width: 360px; }
 
 .footer-nav h4,
 .footer-info h4 {
@@ -1035,172 +801,80 @@ img {
     margin-bottom: 20px;
 }
 
-.footer-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+.footer-nav ul        { display: flex; flex-direction: column; gap: 12px; }
+.footer-nav ul li a   { font-size: 14px; transition: color 0.2s ease; }
+.footer-nav ul li a:hover { color: var(--primary-color); }
 
-.footer-nav ul li a {
-    font-size: 14px;
-    transition: color 0.2s ease;
-}
-
-.footer-nav ul li a:hover {
-    color: var(--primary-color);
-}
-
-.footer-info p {
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.footer-info .disclaimer {
-    font-size: 12px;
-    color: var(--grey-500);
-    margin-top: 12px;
-}
+.footer-info p              { font-size: 14px; margin-bottom: 8px; }
+.footer-info .disclaimer    { font-size: 12px; color: var(--grey-500); margin-top: 12px; }
 
 
-/* ==========================================================================
-   15. Media Queries
-   ========================================================================== */
+/* 15. Media queries -------------------------------------------------------- */
 
 @media (max-width: 992px) {
+    .slideshow              { grid-template-columns: 1fr; }
+    .slideshow-viewport     { height: 400px; order: 1; }
+    .slideshow-meta         { padding: 40px;  order: 2; }
 
-    .premium-slideshow {
-        grid-template-columns: 1fr;
-    }
-    .slideshow-viewport {
-        height: 400px;
-        order: 1;
-    }
-    .slideshow-meta {
-        padding: 40px;
-        order: 2;
-    }
+    .features-grid          { grid-template-columns: repeat(2, 1fr); }
 
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .guide-grid,
+    .guide-grid--reversed                  { grid-template-columns: 1fr; }
+    .guide-grid--reversed .guide-image     { order: -1; }
+    .guide-image                           { height: 300px; }
 
-    .drivetech-grid,
-    .drivetech-grid.grid-reversed {
-        grid-template-columns: 1fr;
-    }
-    .drivetech-grid.grid-reversed .drivetech-image-box {
-        order: -1;
-    }
-
-    .drivetech-image-box {
-        height: 300px;
-    }
-
-    .equipment-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .equipment-grid         { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-
-    .menu-toggle {
-        display: flex;
-    }
+    .menu-toggle { display: flex; }
 
     #navbar ul {
         display: none;
         position: absolute;
         top: var(--navbar-height);
-        left: 0;
-        right: 0;
+        left: 0; right: 0;
         flex-direction: column;
-        background: #ffffff;
+        background: #fff;
         padding: 12px 16px 20px;
         border-bottom: 1px solid var(--grey-200);
         box-shadow: 0 8px 16px rgba(0,0,0,0.08);
         gap: 4px;
     }
-
-    #navbar ul.nav-open {
-        display: flex;
-    }
-
-    #navbar ul li {
-        margin-left: 0;
-    }
-
+    #navbar ul.nav-open  { display: flex; }
+    #navbar ul li        { margin-left: 0; }
     #navbar ul li a {
         justify-content: flex-start;
         padding: 12px 16px;
         height: auto;
         font-size: 15px;
     }
-
-    #navbar h1 a {
-        font-size: 20px;
-    }
+    #navbar h1 a { font-size: 20px; }
 
     .footer-grid,
     .about-grid,
-    .drivetech-grid,
-    .drivetech-grid.grid-reversed,
+    .guide-grid,
+    .guide-grid--reversed,
     .tips-grid,
     .exercises-grid,
-    .equipment-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
+    .equipment-grid { grid-template-columns: 1fr; gap: 24px; }
 
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
+    .features-grid    { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
-    .about-image-box {
-        height: 260px;
-    }
+    .about-image-box  { height: 260px; }
+    .guide-image      { height: 240px; }
 
-    .drivetech-image-box {
-        height: 240px;
-    }
+    .hero-buttons     { flex-direction: column; gap: 12px; }
+    .btn              { text-align: center; }
 
-    .showcase-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
-        text-align: center;
-    }
-
-    .drivetech-grid.grid-reversed .drivetech-image-box {
-        order: -1;
-    }
+    .guide-grid--reversed .guide-image { order: -1; }
 }
 
 @media (max-width: 576px) {
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .slideshow-viewport {
-        height: 260px;
-    }
-
-    .slideshow-meta {
-        padding: 24px;
-    }
-
-    .slideshow-meta h2 {
-        font-size: 28px;
-    }
-
-    #drivetech-showcase {
-        padding: 40px 0 60px;
-    }
-
-    .card {
-        padding: 24px 18px;
-    }
+    .features-grid       { grid-template-columns: 1fr; }
+    .slideshow-viewport  { height: 260px; }
+    .slideshow-meta      { padding: 24px; }
+    .slideshow-meta h2   { font-size: 28px; }
+    .page-header         { padding: 40px 0 60px; }
+    .card                { padding: 24px 18px; }
 }

@@ -2,6 +2,7 @@
 <html lang="et">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <title>Mudased Käed ja Kiired Ringid</title>
@@ -11,10 +12,8 @@
   <nav id="navbar">
     <div class="container">
       <div class="logo">
-        <div class="icon-box">
-          <img src="img/dirtbike.png" alt="Logo" class="logo-img">
-        </div>
-        <h1 class="logo-text text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
+        <div class="icon-box"><img src="img/dirtbike.png" alt="Logo"></div>
+        <h1 class="text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
       </div>
       <ul>
         <li><a href="index.html">Kodu</a></li>
@@ -27,10 +26,10 @@
   </nav>
 </header>
 
-<section id="drivetech-showcase">
+<section class="page-header">
   <div class="container">
     <h1>HOIA OMA RATAS KORRAS</h1>
-    <p class="showcase-lead">
+    <p class="page-lead">
       REGULAARNE HOOLDUS EI OLE AINULT PUHTUSE KÜSIMUS – SEE ON SINU OHUTUSE JA
       MOOTORRATTA PIKAEALISUSE GARANTII. SIIT LEIAD KONTROLLNIMEKIRJAD IGAKS OLUKORRAKS.
     </p>
@@ -38,77 +37,41 @@
 </section>
 
 <main class="container">
-  <section class="drivetech-section">
-    <div class="drivetech-grid">
-      <div class="drivetech-content">
+  <section class="guide-section">
+    <div class="guide-grid">
+      <div class="guide-text">
         <h2>KETI HOOLDUS</h2>
-        <div class="heading-line-short"></div>
+        <div class="section-bar--sm"></div>
         <p class="section-intro">
           Kett on mootorratta üks olulisemaid kuluosi. Korralik puhastus ja õige pinge tagavad võimsuse ülekande ja vähendavad hammasrataste kulumist.
         </p>
-
         <ol class="numbered-list">
-          <li>
-            <div class="list-number">1</div>
-            <div class="list-text">Pese kett spetsiaalse puhastusvahendi ja harjaga.</div>
-          </li>
-          <li>
-            <div class="list-number">2</div>
-            <div class="list-text">Kuivata kett suruõhu või lapiga.</div>
-          </li>
-          <li>
-            <div class="list-number">3</div>
-            <div class="list-text">Kontrolli lõtku: keti ja kiige vahele peaks mahtuma 3 sõrme.</div>
-          </li>
-          <li>
-            <div class="list-number">4</div>
-            <div class="list-text">Keera lahti tagasilla mutter ja reguleeri polte võrdselt.</div>
-          </li>
-          <li>
-            <div class="list-number">5</div>
-            <div class="list-text">Määri kett spetsiaalse krossiketi määrdega seestpoolt.</div>
-          </li>
+          <li><div class="list-number">1</div><div class="list-text">Pese kett spetsiaalse puhastusvahendi ja harjaga.</div></li>
+          <li><div class="list-number">2</div><div class="list-text">Kuivata kett suruõhu või lapiga.</div></li>
+          <li><div class="list-number">3</div><div class="list-text">Kontrolli lõtku: keti ja kiige vahele peaks mahtuma 3 sõrme.</div></li>
+          <li><div class="list-number">4</div><div class="list-text">Keera lahti tagasilla mutter ja reguleeri polte võrdselt.</div></li>
+          <li><div class="list-number">5</div><div class="list-text">Määri kett spetsiaalse krossiketi määrdega seestpoolt.</div></li>
         </ol>
       </div>
-      <div class="drivetech-image-box">
-        <img src="img/attack-position.jpg" alt="Kett" class="drivetech-img">
-      </div>
+      <div class="guide-image"><img src="img/attack-position.jpg" alt="Kett"></div>
     </div>
   </section>
 
-  <section class="drivetech-section">
-    <div class="drivetech-grid grid-reversed">
-      <div class="drivetech-image-box">
-        <img src="img/turns.jpg" alt="õhufilter" class="drivetech-img">
-      </div>
-      <div class="drivetech-content">
+  <section class="guide-section">
+    <div class="guide-grid guide-grid--reversed">
+      <div class="guide-image"><img src="img/turns.jpg" alt="õhufilter"></div>
+      <div class="guide-text">
         <h2>ÕHUFILTRI VAHETUS</h2>
-        <div class="heading-line-short"></div>
+        <div class="section-bar--sm"></div>
         <p class="section-intro">
           Krossisõit on tolmune. Puhas õhufilter on mootori pikaealisuse võti.
         </p>
-
         <ol class="numbered-list">
-          <li>
-            <div class="list-number">1</div>
-            <div class="list-text">Eemalda iste või õhufiltri kaas.</div>
-          </li>
-          <li>
-            <div class="list-number">2</div>
-            <div class="list-text">Võta ettevaatlikult välja vana filter, vältides mustuse kukkumist sisselaskesse.</div>
-          </li>
-          <li>
-            <div class="list-number">3</div>
-            <div class="list-text">Pese filter puhastusvahendis ja lase täielikult kuivada.</div>
-          </li>
-          <li>
-            <div class="list-number">4</div>
-            <div class="list-text">Kanna peale filtriõli ja pigista ülejääk välja (ära vääna!).</div>
-          </li>
-          <li>
-            <div class="list-number">5</div>
-            <div class="list-text">Paigalda filter ja veendu, et servad tihenduvad korralikult.</div>
-          </li>
+          <li><div class="list-number">1</div><div class="list-text">Eemalda iste või õhufiltri kaas.</div></li>
+          <li><div class="list-number">2</div><div class="list-text">Võta ettevaatlikult välja vana filter, vältides mustuse kukkumist sisselaskesse.</div></li>
+          <li><div class="list-number">3</div><div class="list-text">Pese filter puhastusvahendis ja lase täielikult kuivada.</div></li>
+          <li><div class="list-number">4</div><div class="list-text">Kanna peale filtriõli ja pigista ülejääk välja (ära vääna!).</div></li>
+          <li><div class="list-number">5</div><div class="list-text">Paigalda filter ja veendu, et servad tihenduvad korralikult.</div></li>
         </ol>
       </div>
     </div>
@@ -119,14 +82,11 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">
-        <div class="icon-box-small">
-          <img src="img/dirtbike.png" alt="Logo">
-        </div>
+        <div class="icon-box-small"><img src="img/dirtbike.png" alt="Logo"></div>
         <h3>Mudased Käed ja Kiired Ringid</h3>
       </div>
       <p>Eesti esimene põhjalik juhend algajatele krossisõitjale. Mudased käed, kiired ringid!</p>
     </div>
-
     <div class="footer-nav">
       <h4>NAVIGATSIOON</h4>
       <ul>
@@ -137,7 +97,6 @@
         <li><a href="gallery.html">Galerii</a></li>
       </ul>
     </div>
-
     <div class="footer-info">
       <h4>INFO</h4>
       <p>© 2026 Mudased Käed ja Kiired Ringid</p>

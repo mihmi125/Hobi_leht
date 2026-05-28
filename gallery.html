@@ -12,10 +12,8 @@
   <nav id="navbar">
     <div class="container">
       <div class="logo">
-        <div class="icon-box">
-          <img src="img/dirtbike.png" alt="Logo" class="logo-img">
-        </div>
-        <h1 class="logo-text text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
+        <div class="icon-box"><img src="img/dirtbike.png" alt="Logo"></div>
+        <h1 class="text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
       </div>
       <ul>
         <li><a href="index.html">Kodu</a></li>
@@ -28,10 +26,10 @@
   </nav>
 </header>
 
-<section id="drivetech-showcase">
+<section class="page-header">
   <div class="container">
     <h1>PILDIGALERII</h1>
-    <p class="showcase-lead">
+    <p class="page-lead">
       VAATA EMOTSIOONE JA HETKI OTSE KROSSIRADADELT. KASUTA NUGENUPPE, ET LIIGUDA LÄBI MEIE VALITUD KROSSIHETKEDE.
     </p>
   </div>
@@ -39,8 +37,7 @@
 
 <main class="gallery-wrapper">
   <div class="container">
-
-    <div class="premium-slideshow">
+    <div class="slideshow">
 
       <div class="slideshow-meta">
         <span class="meta-tag">LIVE ACTION</span>
@@ -48,39 +45,39 @@
         <p id="meta-desc">Koge kiirust, krossiraja tolmu ja täielikku pühendumist igal läbitud kurvisektsioonil.</p>
 
         <div class="meta-controls">
-          <button class="nav-btn btn-prev" onclick="plusSlides(-1)">&#10094;</button>
-          <button class="nav-btn btn-next" onclick="plusSlides(1)">&#10095;</button>
+          <button class="slide-nav" onclick="plusSlides(-1)">&#10094;</button>
+          <button class="slide-nav" onclick="plusSlides(1)">&#10095;</button>
         </div>
       </div>
 
       <div class="slideshow-viewport">
 
-        <div class="mySlides cool-fade" data-title="KROSSISÕIT KURVIS" data-desc="Maksimaalne gaas, täiuslik kallutus ja adrenaliinipuhang otse krossiraja südames.">
-          <div class="image-overlay"></div>
+        <div class="slide" data-title="KROSSISÕIT KURVIS" data-desc="Maksimaalne gaas, täiuslik kallutus ja adrenaliinipuhang otse krossiraja südames.">
+          <div class="slide-overlay"></div>
           <img src="img/riding.jpg" alt="Krossisõit kurvis">
         </div>
 
-        <div class="mySlides cool-fade" data-title="ÕIGE RÜNNAKUASEND" data-desc="Täielik kontroll tsikli üle nõuab madalat, agressiivset asendit ja küünarnukkide hoidmist üleval.">
-          <div class="image-overlay"></div>
+        <div class="slide" data-title="ÕIGE RÜNNAKUASEND" data-desc="Täielik kontroll tsikli üle nõuab madalat, agressiivset asendit ja küünarnukkide hoidmist üleval.">
+          <div class="slide-overlay"></div>
           <img src="img/attack-position.jpg" alt="Rünnakuasend rajal">
         </div>
 
-        <div class="mySlides cool-fade" data-title="KURVITEHNIKA" data-desc="Haarduvuse ja kiiruse säilitamine sügavates liivarööbastes nõuab kirurgilist täpsust ja julgust.">
-          <div class="image-overlay"></div>
+        <div class="slide" data-title="KURVITEHNIKA" data-desc="Haarduvuse ja kiiruse säilitamine sügavates liivarööbastes nõuab kirurgilist täpsust ja julgust.">
+          <div class="slide-overlay"></div>
           <img src="img/turns.jpg" alt="Kurvitehnika krossis">
         </div>
 
-        <div class="mySlides cool-fade" data-title="TÄIELIK LEND" data-desc="Hüpped nõuavad täiuslikku tasakaalu ja õhukontrolli enne rasket ja kiiret maandumist.">
-          <div class="image-overlay"></div>
+        <div class="slide" data-title="TÄIELIK LEND" data-desc="Hüpped nõuavad täiuslikku tasakaalu ja õhukontrolli enne rasket ja kiiret maandumist.">
+          <div class="slide-overlay"></div>
           <img src="img/Jumps.jpg" alt="Hüpe õhus">
         </div>
 
-        <div class="slide-badge"><span id="current-num">01</span> / <span id="total-num">04</span></div>
+        <div class="slide-counter"><span id="current-num">01</span> / <span id="total-num">04</span></div>
       </div>
 
     </div>
 
-    <div class="dot-container">
+    <div class="slide-dots">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
@@ -94,14 +91,11 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">
-        <div class="icon-box-small">
-          <img src="img/dirtbike.png" alt="Logo">
-        </div>
+        <div class="icon-box-small"><img src="img/dirtbike.png" alt="Logo"></div>
         <h3>Mudased Käed ja Kiired Ringid</h3>
       </div>
       <p>Eesti esimene põhjalik juhend algajatele krossisõitjale. Mudased käed, kiired ringid!</p>
     </div>
-
     <div class="footer-nav">
       <h4>NAVIGATSIOON</h4>
       <ul>
@@ -112,7 +106,6 @@
         <li><a href="gallery.html">Galerii</a></li>
       </ul>
     </div>
-
     <div class="footer-info">
       <h4>INFO</h4>
       <p>© 2026 Mudased Käed ja Kiired Ringid</p>
@@ -125,54 +118,44 @@
   let slideIndex = 1;
   showSlides(slideIndex);
 
-  // Auto advancement (Swaps every 7 seconds)
-  let slideTimer = setInterval(function() { plusSlides(1); }, 7000);
+  let slideTimer = setInterval(function () { plusSlides(1); }, 7000);
 
   function plusSlides(n) {
-    clearInterval(slideTimer); // Reset timer on manual click
+    clearInterval(slideTimer);
     showSlides(slideIndex += n);
-    slideTimer = setInterval(function() { plusSlides(1); }, 7000);
+    slideTimer = setInterval(function () { plusSlides(1); }, 7000);
   }
 
   function currentSlide(n) {
     clearInterval(slideTimer);
     showSlides(slideIndex = n);
-    slideTimer = setInterval(function() { plusSlides(1); }, 7000);
+    slideTimer = setInterval(function () { plusSlides(1); }, 7000);
   }
 
   function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+    const slides = document.getElementsByClassName("slide");
+    const dots   = document.getElementsByClassName("dot");
 
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1)             slideIndex = slides.length;
 
-    // Hide all slides
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
-      slides[i].classList.remove("slide-active");
+      slides[i].classList.remove("is-active");
     }
     for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].classList.remove("active");
     }
 
-    // Show current slide & activate animations
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(() => {
-      slides[slideIndex-1].classList.add("slide-active");
-    }, 20);
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(() => slides[slideIndex - 1].classList.add("is-active"), 20);
+    dots[slideIndex - 1].classList.add("active");
 
-    dots[slideIndex-1].className += " active";
+    document.getElementById("meta-title").innerText = slides[slideIndex - 1].dataset.title;
+    document.getElementById("meta-desc").innerText  = slides[slideIndex - 1].dataset.desc;
 
-    // Dynamic text updating using dataset properties
-    let title = slides[slideIndex-1].getAttribute('data-title');
-    let desc = slides[slideIndex-1].getAttribute('data-desc');
-    document.getElementById("meta-title").innerText = title;
-    document.getElementById("meta-desc").innerText = desc;
-
-    // Update Counter badge
     document.getElementById("current-num").innerText = "0" + slideIndex;
-    document.getElementById("total-num").innerText = "0" + slides.length;
+    document.getElementById("total-num").innerText   = "0" + slides.length;
   }
 </script>
 </body>
