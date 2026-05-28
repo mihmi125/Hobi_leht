@@ -8,6 +8,7 @@
   <title>Mudased Käed ja Kiired Ringid</title>
 </head>
 <body>
+
 <header>
   <nav id="navbar">
     <div class="container">
@@ -15,7 +16,12 @@
         <div class="icon-box"><img src="img/dirtbike.png" alt="Logo"></div>
         <h1 class="text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
       </div>
-      <ul>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Ava menüü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="navMenu">
         <li><a href="index.html">Kodu</a></li>
         <li><a href="drivetech.html">Sõidutehnika</a></li>
         <li><a class="current" href="maintenance.html">Hooldus</a></li>
@@ -104,5 +110,25 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu    = document.getElementById('navMenu');
+
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navMenu.classList.toggle('nav-open');
+    menuToggle.classList.toggle('is-open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  navMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navMenu.classList.remove('nav-open');
+      menuToggle.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
 </body>
 </html>

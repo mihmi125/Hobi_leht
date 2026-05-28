@@ -750,6 +750,20 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     width: 55px;
 }
 
+.gallery-container,
+.slideshow-container {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+footer {
+    margin-top: 0 !important;
+}
+
+body:has(.slideshow-container) {
+    background-color: var(--dark-color);
+}
+
 
 /* 14. Footer --------------------------------------------------------------- */
 

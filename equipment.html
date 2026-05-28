@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Mudased Käed ja Kiired Ringid</title>
+    <title>Mudased Käed ja Kiired Ringid - Varustus</title>
 </head>
 <body>
+
 <header>
     <nav id="navbar">
         <div class="container">
@@ -15,7 +16,12 @@
                 <div class="icon-box"><img src="img/dirtbike.png" alt="Logo"></div>
                 <h1 class="text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
             </div>
-            <ul>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Ava menüü" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul id="navMenu">
                 <li><a href="index.html">Kodu</a></li>
                 <li><a href="drivetech.html">Sõidutehnika</a></li>
                 <li><a href="maintenance.html">Hooldus</a></li>
@@ -26,6 +32,148 @@
     </nav>
 </header>
 
+<section class="page-header">
+    <div class="container">
+        <h1>VARUSTUS JA KAITSMEVARUSTUS</h1>
+        <p class="page-lead">
+            ÕIGE VARUSTUS ON OHUTUSE ALUS. SIIT LEIAD KÕIK, MIS SINULE KROSSISÕIDUKS JA TEIE RATTALE VAJALIK ON.
+        </p>
+    </div>
+</section>
+
+<main class="container">
+
+    <section id="equipment-main">
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <img src="img/helmet.jpg" alt="Kiiver" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-critical">OLULINE</span>
+                    <h3>KIIVER</h3>
+                    <p>Krossikirjutaja jaoks on hea kiiver eluliselt oluline. Vali kiiver, mis sobib sinu pea suurusega ja pakub maksimaalset kaitset.</p>
+                    <ul class="eq-checklist">
+                        <li>Homoloogitud standart ECE 22.05</li>
+                        <li>Hea ventilatsiooni süsteem</li>
+                        <li>Mugav ja kindel istuvus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/goggles.jpg" alt="Prillid" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-critical">OLULINE</span>
+                    <h3>PRILLID</h3>
+                    <p>Kaugele nägemise ja tolmu kaitse. Investeeri kvaliteetsetesse prillides, mis pakuvad selget vaatevälka ja head kaitsefunktsiooni.</p>
+                    <ul class="eq-checklist">
+                        <li>UV-kaitse polükarbonaat läätsed</li>
+                        <li>Mugav vahtpadjestus</li>
+                        <li>Hea tuulutus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/chest-protector.jpg" alt="Rindkaitse" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-critical">OLULINE</span>
+                    <h3>RINDKAITSE</h3>
+                    <p>Ühendatud rindkaitse ja seljakaitse on vajalik katteks kukkumiste ja löökide vastu, mis võivad juhtuda krossisõidul.</p>
+                    <ul class="eq-checklist">
+                        <li>EVA vaht kaitsekihid</li>
+                        <li>Hingav võrgumaterjalide sisumus</li>
+                        <li>Reguleeritavad paelad</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/gloves.jpg" alt="Kindad" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-required">NÕUTAV</span>
+                    <h3>KINDAD</h3>
+                    <p>Hea grep rattal ja käte kaitse. Kindad peaksid andma teile paremaid kontrolli ja närvikiirust käte vigastustes.</p>
+                    <ul class="eq-checklist">
+                        <li>Rätik käsiretuuli aladel</li>
+                        <li>Polsterdused peopesades</li>
+                        <li>Elastne seljaosa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/boots.jpg" alt="Saapikud" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-required">NÕUTAV</span>
+                    <h3>KROSSISAAPIKUD</h3>
+                    <p>Vastupidavad ja teravas kaitsekuulis. Krossi saapikud peavad olema kõrged, et aidata sul säilitada optimaalse positiooni pedaalides.</p>
+                    <ul class="eq-checklist">
+                        <li>Kaitsev süsinikimp</li>
+                        <li>Tugev arkolmuutuja</li>
+                        <li>Hingav, sidemed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/jersey.jpg" alt="Särgid" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-recommended">SOOVITUSLIK</span>
+                    <h3>KROSSISÄRGID</h3>
+                    <p>Spetsiaalselt disainitud krossisärgid on kerged, hingavad ja vastupidavad. Hea värvivalik aitab sul rajal märgatavamaks jääda.</p>
+                    <ul class="eq-checklist">
+                        <li>Kiire kuivamise materjal</li>
+                        <li>Ergonoomne lõige</li>
+                        <li>Eritoode värvimine</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/pants.jpg" alt="Püksid" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-recommended">SOOVITUSLIK</span>
+                    <h3>KROSSIPÜKSID</h3>
+                    <p>Konkteetne ja tugev materjalid pakuvad igapäevast kaitseks kukumiste korral ja on suurepärane mugavust rahuldama.</p>
+                    <ul class="eq-checklist">
+                        <li>Hingav polüamiidfond</li>
+                        <li>Polsterdus põlvel ja puusall</li>
+                        <li>Elastne talje ja jalkad</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/neck-brace.jpg" alt="Kaelane" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-recommended">SOOVITUSLIK</span>
+                    <h3>KAELANE</h3>
+                    <p>Kaelane vähendab kukkumiste ajal kaela vigastuse riski. Eriti oluline algajatele, kes veel ei oska hästi kukkuda.</p>
+                    <ul class="eq-checklist">
+                        <li>Ergonoomne kujundus</li>
+                        <li>Kerge ja hingav</li>
+                        <li>Hea kiinnitus süsteem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="equipment-card">
+                <img src="img/bike-gear.jpg" alt="Ratta osad" class="equipment-card-img">
+                <div class="equipment-card-body">
+                    <span class="eq-badge eq-badge-required">NÕUTAV</span>
+                    <h3>RATTA HOOLDUSVAHENDID</h3>
+                    <p>Krossirattal peavad olema valikarvest rehvid, toimiv pidurdussüsteem ja tugev raam. Pidev hooldus on oluline.</p>
+                    <ul class="eq-checklist">
+                        <li>Kvaliteetse rehvide valik</li>
+                        <li>Reguleeritud pidurdid</li>
+                        <li>Tugev ja kerge raam</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 <footer id="main-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
@@ -35,6 +183,7 @@
             </div>
             <p>Eesti esimene põhjalik juhend algajatele krossisõitjale. Mudased käed, kiired ringid!</p>
         </div>
+
         <div class="footer-nav">
             <h4>NAVIGATSIOON</h4>
             <ul>
@@ -45,6 +194,7 @@
                 <li><a href="gallery.html">Galerii</a></li>
             </ul>
         </div>
+
         <div class="footer-info">
             <h4>INFO</h4>
             <p>© 2026 Mudased Käed ja Kiired Ringid</p>
@@ -52,5 +202,25 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu    = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', function () {
+        const isOpen = navMenu.classList.toggle('nav-open');
+        menuToggle.classList.toggle('is-open', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            navMenu.classList.remove('nav-open');
+            menuToggle.classList.remove('is-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
+
 </body>
 </html>
