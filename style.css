@@ -1,14 +1,45 @@
-/* --- Reset & Base Styles --- */
+/* ==========================================================================
+   style.css — Mudased Käed ja Kiired Ringid
+   Main stylesheet for all pages. Organised sections:
+     1. Reset & Base
+     2. Helpers & Containers
+     3. Buttons
+     4. Navbar (desktop + mobile hamburger)
+     5. Index: Showcase Hero
+     6. Index: Features Grid
+     7. Index: Tips
+     8. Index: About
+     9. Drivetech / Maintenance showcase banner
+    10. Drivetech content sections
+    11. Exercises Grid
+    12. Equipment page
+    13. Gallery / Slideshow
+    14. Footer
+    15. Media Queries (mobile-first overrides)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. Reset & Base
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* CSS custom properties — change these to retheme the whole site */
 :root {
     --primary-color: #F9851F;
-    --light-color: #FFFFFF;
-    --dark-color: #171A1F;
+    --primary-dark:  #e67610;
+    --light-color:   #FFFFFF;
+    --dark-color:    #171A1F;
+    --grey-100:      #F3F4F6;
+    --grey-200:      #E5E7EB;
+    --grey-500:      #6B7280;
+    --grey-700:      #374151;
+    --navbar-height: 72px;
 }
 
 body {
@@ -16,7 +47,7 @@ body {
     line-height: 1.6;
     color: var(--dark-color);
     background-color: #FAFAFA;
-    padding-top: 72px;
+    padding-top: var(--navbar-height);
 }
 
 a {
@@ -32,7 +63,15 @@ h1, h2, h3, h4 {
     font-family: "Bebas Neue", sans-serif;
 }
 
-/* --- Helper Classes & Containers --- */
+img {
+    max-width: 100%;
+}
+
+
+/* ==========================================================================
+   2. Helpers & Containers
+   ========================================================================== */
+
 .container {
     margin: auto;
     max-width: 1440px;
@@ -43,7 +82,11 @@ h1, h2, h3, h4 {
     color: var(--primary-color);
 }
 
-/* --- Buttons --- */
+
+/* ==========================================================================
+   3. Buttons
+   ========================================================================== */
+
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -51,7 +94,8 @@ h1, h2, h3, h4 {
     cursor: pointer;
     border-radius: 10px;
     font-weight: 500;
-    transition: background 0.2s ease;
+    font-size: 15px;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary {
@@ -60,7 +104,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary:hover {
-    background: #e67610;
+    background: var(--primary-dark);
 }
 
 .btn-outline {
@@ -75,10 +119,14 @@ h1, h2, h3, h4 {
     border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Navbar --- */
+
+/* ==========================================================================
+   4. Navbar
+   ========================================================================== */
+
 #navbar {
     background: #FFFFFF;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--grey-200);
     position: fixed;
     top: 0;
     right: 0;
@@ -90,7 +138,40 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px;
+    height: var(--navbar-height);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: filter 0.2s ease;
+}
+
+.logo:hover {
+    filter: brightness(1.1);
+}
+
+.logo img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+.icon-box {
+    background-color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+#navbar h1 a {
+    font-size: 30px;
 }
 
 #navbar ul {
@@ -109,70 +190,75 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
-}
-
-#navbar h1 a {
-    font-size: 30px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 #navbar ul li a:hover,
 #navbar ul li a.current {
-    background: #F3F4F6;
-    color: #F9851F;
-    border-radius: 6px;
+    background: var(--grey-100);
+    color: var(--primary-color);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.logo:hover {
-    filter: brightness(1.1);
-}
-
-.logo img {
-    max-width: 60%;
-    max-height: 60%;
-    object-fit: contain;
-}
-
-.icon-box {
-    background-color: #F9851F;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
+.menu-toggle {
+    display: none;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-right: 12px;
-    flex-shrink: 0;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
 }
 
-/* --- Index: Showcase --- */
+.menu-toggle:hover {
+    background: var(--grey-100);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--dark-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ==========================================================================
+   5. Index: Showcase
+   ========================================================================== */
+
 #showcase {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-    url("img/riding.jpg") no-repeat center center/cover;
-    height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url("img/riding.jpg") no-repeat center center / cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
 }
 
 #showcase .showcase-content {
     color: var(--light-color);
-    padding-top: 140px;
-    width: 680px;
+    padding: 80px 0 60px;
+    max-width: 680px;
 }
 
 #showcase .showcase-content h1 {
-    font-size: 60px;
-    line-height: 75px;
+    font-size: clamp(32px, 5vw, 60px);
+    line-height: 1.15;
     font-weight: 800;
 }
 
 #showcase .showcase-content h2 {
     padding-top: 20px;
-    font-size: 20px;
+    font-size: clamp(15px, 2vw, 20px);
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     line-height: 2;
 }
@@ -180,10 +266,15 @@ h1, h2, h3, h4 {
 .showcase-buttons {
     margin-top: 40px;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
-/* --- Index: Features --- */
+
+/* ==========================================================================
+   6. Index: Features Grid
+   ========================================================================== */
+
 #features {
     padding: 80px 0;
 }
@@ -214,19 +305,18 @@ h1, h2, h3, h4 {
 
 .card {
     background: #ffffff;
-    border: 1px solid #f3f4f6;
+    border: 1px solid var(--grey-100);
     border-radius: 12px;
     padding: 32px 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
     display: flex;
     flex-direction: column;
-
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .icon-wrapper {
@@ -248,7 +338,6 @@ h1, h2, h3, h4 {
 
 .card h3 {
     font-size: 20px;
-    font-weight: 700;
     margin-bottom: 16px;
     letter-spacing: 1px;
 }
@@ -269,14 +358,18 @@ h1, h2, h3, h4 {
 }
 
 .card:hover .card-link {
-    color: #e67610;
+    color: var(--primary-dark);
     text-decoration: underline;
 }
 
-/* --- Index: Tips --- */
+
+/* ==========================================================================
+   7. Index: Tips
+   ========================================================================== */
+
 #tips-section {
-    padding: 60px 0 80px 0;
-    border-top: 1px solid #e5e7eb;
+    padding: 60px 0 80px;
+    border-top: 1px solid var(--grey-200);
 }
 
 .tips-heading {
@@ -292,7 +385,7 @@ h1, h2, h3, h4 {
 
 .tips-heading p {
     font-size: 15px;
-    color: #6b7280;
+    color: var(--grey-500);
 }
 
 .tips-grid {
@@ -303,13 +396,13 @@ h1, h2, h3, h4 {
 
 .tip-card {
     background: #ffffff;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--grey-200);
     border-radius: 12px;
     padding: 24px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.01);
 }
 
 .tip-icon-box {
@@ -331,14 +424,18 @@ h1, h2, h3, h4 {
 
 .tip-card p {
     font-size: 14px;
-    color: #374151;
-    line-height: 2;
+    color: var(--grey-700);
+    line-height: 1.8;
 }
 
-/* --- Index: About --- */
+
+/* ==========================================================================
+   8. Index: About
+   ========================================================================== */
+
 #about-section {
     padding: 80px 0;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--grey-200);
 }
 
 .about-grid {
@@ -373,12 +470,12 @@ h1, h2, h3, h4 {
     align-items: center;
     gap: 12px;
     font-size: 15px;
-    color: #171a1f;
+    color: var(--dark-color);
 }
 
 .list-icon {
     background-color: #ffedd5;
-    color: #f9851f;
+    color: var(--primary-color);
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -387,6 +484,7 @@ h1, h2, h3, h4 {
     align-items: center;
     font-weight: bold;
     font-size: 12px;
+    flex-shrink: 0;
 }
 
 .about-image-box {
@@ -394,7 +492,7 @@ h1, h2, h3, h4 {
     height: 380px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .about-img {
@@ -404,17 +502,21 @@ h1, h2, h3, h4 {
     display: block;
 }
 
-/* --- Drivetech: Showcase --- */
+
+/* ==========================================================================
+   9. Drivetech / Maintenance / Equipment — Showcase Banner
+   ========================================================================== */
+
 #drivetech-showcase {
     background-color: #F8F9FA;
-    padding: 60px 0 80px 0;
-    border-bottom: 1px solid #E5E7EB;
+    padding: 60px 0 80px;
+    border-bottom: 1px solid var(--grey-200);
 }
 
 #drivetech-showcase h1 {
-    font-size: 48px;
+    font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
-    color: #171A1F;
+    color: var(--dark-color);
     margin-bottom: 20px;
     letter-spacing: 1px;
 }
@@ -447,13 +549,13 @@ h1, h2, h3, h4 {
     object-fit: contain;
 }
 
-/* --- Drivetech --- */
+
+/* ==========================================================================
+   10. Drivetech — Content Sections
+   ========================================================================== */
+
 .drivetech-section {
     padding: 80px 0;
-}
-
-#turns-section {
-    background-color: #ffffff;
 }
 
 .drivetech-grid {
@@ -470,15 +572,15 @@ h1, h2, h3, h4 {
 .drivetech-content h2 {
     font-size: 36px;
     font-weight: 800;
-    color: #171A1F;
+    color: var(--dark-color);
     letter-spacing: 1px;
 }
 
 .heading-line-short {
     width: 40px;
     height: 4px;
-    background-color: #F9851F;
-    margin: 12px 0 24px 0;
+    background-color: var(--primary-color);
+    margin: 12px 0 24px;
     border-radius: 2px;
 }
 
@@ -499,7 +601,7 @@ h1, h2, h3, h4 {
     align-items: center;
     gap: 16px;
     padding: 16px 0;
-    border-bottom: 1px solid #F3F4F6;
+    border-bottom: 1px solid var(--grey-100);
 }
 
 .numbered-list li:last-child {
@@ -507,7 +609,7 @@ h1, h2, h3, h4 {
 }
 
 .list-number {
-    background-color: #F9851F;
+    background-color: var(--primary-color);
     color: #FFFFFF;
     width: 28px;
     height: 28px;
@@ -522,8 +624,7 @@ h1, h2, h3, h4 {
 
 .list-text {
     font-size: 15px;
-    color: #171A1F;
-    font-weight: 400;
+    color: var(--dark-color);
 }
 
 .drivetech-image-box {
@@ -531,7 +632,7 @@ h1, h2, h3, h4 {
     height: 420px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .drivetech-img {
@@ -541,9 +642,14 @@ h1, h2, h3, h4 {
     display: block;
 }
 
+
+/* ==========================================================================
+   11. Exercises Grid (drivetech.html)
+   ========================================================================== */
+
 #exercises-section {
-    padding: 60px 0 100px 0;
-    border-top: 1px solid #E5E7EB;
+    padding: 60px 0 100px;
+    border-top: 1px solid var(--grey-200);
 }
 
 .exercises-heading {
@@ -559,7 +665,7 @@ h1, h2, h3, h4 {
 
 .exercises-heading p {
     font-size: 15px;
-    color: #6B7280;
+    color: var(--grey-500);
 }
 
 .exercises-grid {
@@ -583,18 +689,18 @@ h1, h2, h3, h4 {
 }
 
 .badge-beginner {
-    background-color: #F3F4F6;
+    background-color: var(--grey-100);
     color: #4B5563;
 }
 
 .badge-intermediate {
     background-color: #FFF7ED;
-    color: #F9851F;
+    color: var(--primary-color);
 }
 
 .duration {
     font-size: 13px;
-    color: #6B7280;
+    color: var(--grey-500);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -605,7 +711,273 @@ h1, h2, h3, h4 {
     font-size: 12px;
 }
 
-/* --- Footer Styles --- */
+
+/* ==========================================================================
+   12. Equipment Page
+   ========================================================================== */
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 60px 0 100px;
+}
+
+.equipment-card {
+    background: #ffffff;
+    border: 1px solid var(--grey-100);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.equipment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+}
+
+.equipment-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.equipment-card-body {
+    padding: 24px;
+}
+
+.equipment-card-body h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.equipment-card-body p {
+    font-size: 14px;
+    color: #55585d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.eq-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.eq-badge-critical {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.eq-badge-required {
+    background-color: #FFF7ED;
+    color: var(--primary-color);
+}
+
+.eq-badge-recommended {
+    background-color: var(--grey-100);
+    color: #4B5563;
+}
+
+.eq-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.eq-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--grey-700);
+}
+
+.eq-checklist li::before {
+    content: "✓";
+    color: var(--primary-color);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================================
+   13. Gallery / Slideshow
+   ========================================================================== */
+
+.gallery-wrapper {
+    background-color: #11141a;
+    padding: 60px 0;
+    margin-top: 20px;
+    border-top: 4px solid var(--primary-color);
+}
+
+.premium-slideshow {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: #1c2029;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.slideshow-meta {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #1c2029 0%, #161920 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.slideshow-meta .meta-tag {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.slideshow-meta h2 {
+    color: #fff;
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.slideshow-meta p {
+    color: #a0aec0;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.meta-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-btn {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249,133,31,0.3);
+}
+
+.slideshow-viewport {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+}
+
+.mySlides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 7s cubic-bezier(0.1,1,0.1,1);
+}
+
+.mySlides.slide-active img {
+    transform: scale(1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(22,25,32,0.6) 0%, transparent 40%);
+    z-index: 1;
+}
+
+.slide-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(23,26,31,0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+#current-num {
+    color: var(--primary-color);
+}
+
+.dot-container {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 4px;
+    width: 35px;
+    margin: 0 4px;
+    background-color: rgba(255,255,255,0.15);
+    display: inline-block;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: var(--primary-color);
+    width: 55px;
+}
+
+.cool-fade {
+    opacity: 0.1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.cool-fade.slide-active {
+    opacity: 1;
+}
+
+
+/* ==========================================================================
+   14. Footer
+   ========================================================================== */
+
 #main-footer {
     background-color: var(--dark-color);
     color: #9CA3AF;
@@ -685,208 +1057,150 @@ h1, h2, h3, h4 {
 
 .footer-info .disclaimer {
     font-size: 12px;
-    color: #6B7280;
+    color: var(--grey-500);
     margin-top: 12px;
 }
 
-.gallery-wrapper {
-    background-color: #11141a;
-    padding: 60px 0;
-    margin-top: 20px;
-    border-top: 4px solid var(--primary-color);
-}
 
-.premium-slideshow {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background: #1c2029;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.05);
-}
+/* ==========================================================================
+   15. Media Queries
+   ========================================================================== */
 
-.slideshow-meta {
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: linear-gradient(135deg, #1c2029 0%, #161920 100%);
-    position: relative;
-    z-index: 2;
-}
+@media (max-width: 992px) {
 
-.slideshow-meta .meta-tag {
-    color: var(--primary-color);
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-}
-
-.slideshow-meta h2 {
-    color: #fff;
-    font-size: 42px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.slideshow-meta p {
-    color: #a0aec0;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 35px;
-}
-
-.meta-controls {
-    display: flex;
-    gap: 12px;
-}
-
-.nav-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #fff;
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-btn:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(249, 133, 31, 0.3);
-}
-
-.slideshow-viewport {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-    background: #000;
-}
-
-.mySlides {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.mySlides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.08);
-    transition: transform 7s cubic-bezier(0.1, 1, 0.1, 1);
-}
-
-.mySlides.slide-active img {
-    transform: scale(1);
-}
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(22,25,32,0.6) 0%, transparent 40%);
-    z-index: 1;
-}
-
-.slide-badge {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background: rgba(23, 26, 31, 0.75);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 8px 18px;
-    border-radius: 30px;
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 1px;
-    z-index: 3;
-}
-
-#current-num {
-    color: var(--primary-color);
-}
-
-/* Bottom Pagination Styling */
-.dot-container {
-    text-align: center;
-    margin-top: 35px;
-}
-
-.dot {
-    cursor: pointer;
-    height: 4px;
-    width: 35px;
-    margin: 0 4px;
-    background-color: rgba(255,255,255,0.15);
-    display: inline-block;
-    transition: all 0.4s ease;
-    border-radius: 2px;
-}
-
-.dot.active, .dot:hover {
-    background-color: var(--primary-color);
-    width: 55px;
-}
-
-.cool-fade {
-    opacity: 0.1;
-    transition: opacity 0.6s ease-in-out;
-}
-
-.cool-fade.slide-active {
-    opacity: 1;
-}
-
-@media(max-width: 992px) {
     .premium-slideshow {
         grid-template-columns: 1fr;
-    }
-    .slideshow-meta {
-        padding: 40px;
-        order: 2;
     }
     .slideshow-viewport {
         height: 400px;
         order: 1;
     }
-}
-
-@media(max-width: 576px) {
-    .slideshow-viewport {
-        height: 280px;
-    }
-    .slideshow-meta h2 {
-        font-size: 32px;
-    }
     .slideshow-meta {
-        padding: 25px;
+        padding: 40px;
+        order: 2;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .drivetech-grid,
+    .drivetech-grid.grid-reversed {
+        grid-template-columns: 1fr;
+    }
+    .drivetech-grid.grid-reversed .drivetech-image-box {
+        order: -1;
+    }
+
+    .drivetech-image-box {
+        height: 300px;
+    }
+
+    .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    #navbar ul {
+        display: none;
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 12px 16px 20px;
+        border-bottom: 1px solid var(--grey-200);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        gap: 4px;
+    }
+
+    #navbar ul.nav-open {
+        display: flex;
+    }
+
+    #navbar ul li {
+        margin-left: 0;
+    }
+
+    #navbar ul li a {
+        justify-content: flex-start;
+        padding: 12px 16px;
+        height: auto;
+        font-size: 15px;
+    }
+
+    #navbar h1 a {
+        font-size: 20px;
+    }
+
     .footer-grid,
     .about-grid,
     .drivetech-grid,
-    .features-grid,
+    .drivetech-grid.grid-reversed,
     .tips-grid,
-    .exercises-grid {
-        grid-template-columns: 1fr !important;
-        gap: 30px;
+    .exercises-grid,
+    .equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .about-image-box {
+        height: 260px;
+    }
+
+    .drivetech-image-box {
+        height: 240px;
+    }
+
+    .showcase-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .drivetech-grid.grid-reversed .drivetech-image-box {
+        order: -1;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slideshow-viewport {
+        height: 260px;
+    }
+
+    .slideshow-meta {
+        padding: 24px;
+    }
+
+    .slideshow-meta h2 {
+        font-size: 28px;
+    }
+
+    #drivetech-showcase {
+        padding: 40px 0 60px;
+    }
+
+    .card {
+        padding: 24px 18px;
     }
 }

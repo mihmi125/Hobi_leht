@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Bebas Neue for headings, Roboto for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <title>Mudased Käed ja Kiired Ringid</title>
 </head>
 <body>
 
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 <header>
     <nav id="navbar">
         <div class="container">
+
+            <!-- Site logo -->
             <div class="logo">
                 <div class="icon-box">
                     <img src="img/dirtbike.png" alt="Logo" class="logo-img">
                 </div>
-                <h1 class="logo-text text-primary"><a href="index.html">Mudased Käed ja Kiired Ringid</a></h1>
+                <h1 class="logo-text text-primary">
+                    <a href="index.html">Mudased Käed ja Kiired Ringid</a>
+                </h1>
             </div>
-            <ul>
+
+            <!-- Hamburger button — visible on mobile only -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Ava menüü" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation links -->
+            <ul id="navMenu">
                 <li><a class="current" href="index.html">Kodu</a></li>
                 <li><a href="drivetech.html">Sõidutehnika</a></li>
                 <li><a href="maintenance.html">Hooldus</a></li>
@@ -28,11 +45,13 @@
         </div>
     </nav>
 
+    <!-- showcase -->
     <div id="showcase">
         <div class="container">
             <div class="showcase-content">
                 <h1>SINU TEEKOND MOTOKROSSI MAAILMA ALGAB SIIT</h1>
-                <h2>Õpi õigeid tehnikaid, hoolda oma ratast nagu pro ja varusta end turvaliselt. Mudased käed ja kiired ringid, kõik algajale krossisõitjale vajalik ühes kohas.</h2>
+                <h2>Õpi õigeid tehnikaid, hoolda oma ratast nagu pro ja varusta end turvaliselt.
+                    Mudased käed ja kiired ringid, kõik algajale krossisõitjale vajalik ühes kohas.</h2>
                 <div class="showcase-buttons">
                     <a href="drivetech.html" class="btn btn-primary">Alusta õppimist &gt;</a>
                     <a href="gallery.html" class="btn btn-outline">Vaata galeriid</a>
@@ -42,7 +61,12 @@
     </div>
 </header>
 
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
 <main class="container">
+
+    <!-- Features grid -->
     <section id="features">
         <div class="features-heading">
             <h2>AVASTA KROSSISÕIDU PÕHIOSAD</h2>
@@ -88,6 +112,7 @@
         </div>
     </section>
 
+    <!-- Quick tips section -->
     <section id="tips-section">
         <div class="tips-heading">
             <h2>ESILETÕSTETUD NÄPUNÄITED</h2>
@@ -118,11 +143,14 @@
         </div>
     </section>
 
+    <!-- About section -->
     <section id="about-section">
         <div class="about-grid">
+
             <div class="about-content">
                 <h2>ROHKEM KUI LIHTSALT HOBI</h2>
-                <p>Motokross on elustiil, mis õpetab distsipliini, tehnikat ja püsivust. Meie eesmärk on pakkuda sulle tugevat vundamenti, et saaksid nautida igat minutit sadulas turvaliselt ja enesekindlalt.</p>
+                <p>Motokross on elustiil, mis õpetab distsipliini, tehnikat ja püsivust. Meie eesmärk on pakkuda
+                    sulle tugevat vundamenti, et saaksid nautida igat minutit sadulas turvaliselt ja enesekindlalt.</p>
 
                 <ul class="about-list">
                     <li>
@@ -143,12 +171,19 @@
             <div class="about-image-box">
                 <img src="img/action-shot.png" alt="Krossirada hüppe" class="about-img">
             </div>
+
         </div>
     </section>
+
 </main>
 
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 <footer id="main-footer">
     <div class="container footer-grid">
+
+        <!-- Brand column -->
         <div class="footer-brand">
             <div class="footer-logo">
                 <div class="icon-box-small">
@@ -159,6 +194,7 @@
             <p>Eesti esimene põhjalik juhend algajatele krossisõitjale. Mudased käed, kiired ringid!</p>
         </div>
 
+        <!-- Navigation column -->
         <div class="footer-nav">
             <h4>NAVIGATSIOON</h4>
             <ul>
@@ -170,12 +206,39 @@
             </ul>
         </div>
 
+        <!-- Copyright column -->
         <div class="footer-info">
             <h4>INFO</h4>
             <p>© 2026 Mudased Käed ja Kiired Ringid</p>
             <p class="disclaimer">Kõik õigused on kaitstud. Sõida ohutult!</p>
         </div>
+
     </div>
 </footer>
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+<script>
+    // Mobile hamburger menu toggle
+    // Adds/removes the .nav-open class on the <ul> and .is-open on the button
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu    = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', function () {
+        const isOpen = navMenu.classList.toggle('nav-open');
+        menuToggle.classList.toggle('is-open', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close the mobile menu when any nav link is clicked
+    navMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            navMenu.classList.remove('nav-open');
+            menuToggle.classList.remove('is-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
 </body>
 </html>
