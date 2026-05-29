@@ -158,8 +158,8 @@
     document.getElementById("meta-title").innerText = slides[slideIndex - 1].dataset.title || "";
     document.getElementById("meta-desc").innerText  = slides[slideIndex - 1].dataset.desc || "";
 
-    document.getElementById("current-num").innerText = "0" + slideIndex;
-    document.getElementById("total-num").innerText   = "0" + slides.length;
+    document.getElementById("current-num").innerText = String(slideIndex).padStart(2, "0");
+    document.getElementById("total-num").innerText   = String(slides.length).padStart(2, "0");
   }
 
 
@@ -169,7 +169,7 @@
   menuToggle.addEventListener('click', function () {
     const isOpen = navMenu.classList.toggle('nav-open');
     menuToggle.classList.toggle('is-open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   navMenu.querySelectorAll('a').forEach(function (link) {

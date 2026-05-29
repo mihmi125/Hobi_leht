@@ -89,7 +89,7 @@
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-required">NÕUTAV</span>
                     <h3>KINDAD</h3>
-                    <p>Hea grep rattal ja käte kaitse. Kindad peaksid andma teile paremaid kontrolli ja närvikiirust käte vigastustes.</p>
+                    <p>Kindad tagavad hea haarde juhtraual ja kaitsevad käsi kukkumiste korral. Õige suurus ja pehmendus vähendavad väsimust pikkadel sõitudel.</p>
                     <ul class="eq-checklist">
                         <li>Pehmentadud peopesades</li>
                         <li>Elastne seljaosa</li>
@@ -102,7 +102,7 @@
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-required">NÕUTAV</span>
                     <h3>KROSSISAAPIKUD</h3>
-                    <p>Vastupidavad ja teravas kaitsekuulis. Krossi saapikud peavad olema kõrged, et aidata sul säilitada optimaalse positiooni pedaalides.</p>
+                    <p>Krossisaapikud peavad olema kõrged ja jäigad, et kaitsta pahkluud ja aidata säilitada õiget asendi pedaalide peal.</p>
                     <ul class="eq-checklist">
                         <li>Reguleeritavad</li>
                         <li>Hingav</li>
@@ -128,7 +128,7 @@
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-recommended">SOOVITUSLIK</span>
                     <h3>KROSSIPÜKSID</h3>
-                    <p>Konkteetne ja tugev materjalid pakuvad igapäevast kaitseks kukumiste korral ja on suurepärane mugavust rahuldama.</p>
+                    <p>Tugevdatud materjaliga krossipüksid kaitsevad kukkumiste korral ja pakuvad mugavust ka pikematel sõitudel.</p>
                     <ul class="eq-checklist">
                         <li>Hingav</li>
                         <li>Tugevtandud põlved</li>
@@ -141,7 +141,7 @@
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-recommended">SOOVITUSLIK</span>
                     <h3>KAELAKAITSE</h3>
-                    <p>Kalekaitse vähendab kukkumiste ajal kaela vigastuse riski. Eriti oluline algajatele, kes veel ei oska hästi kukkuda.</p>
+                    <p>Kaelakaitse vähendab kukkumiste ajal kaela vigastuse riski. Eriti oluline algajatele, kes veel ei oska hästi kukkuda.</p>
                     <ul class="eq-checklist">
                         <li>Kerge ja hingav</li>
                         <li>Hea kiinnitus süsteem</li>
@@ -202,7 +202,7 @@
     menuToggle.addEventListener('click', function () {
         const isOpen = navMenu.classList.toggle('nav-open');
         menuToggle.classList.toggle('is-open', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     navMenu.querySelectorAll('a').forEach(function (link) {

@@ -171,7 +171,7 @@
     menuToggle.addEventListener('click', function () {
         const isOpen = navMenu.classList.toggle('nav-open');
         menuToggle.classList.toggle('is-open', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     navMenu.querySelectorAll('a').forEach(function (link) {
