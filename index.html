@@ -41,7 +41,7 @@
             <div class="showcase-content">
                 <h1>SINU TEEKOND MOTOKROSSI MAAILMA ALGAB SIIT</h1>
                 <h2>Õpi õigeid võtteid, hoolda oma ratast nagu kogenud sõitja ja varusta end korralikult.
-                    Kõik, mida algaja krossisõitja vajab ühes kohas.</h2>
+                    Kõik, mida algaja krossisõitja vajab, on ühes kohas.</h2>
                 <div class="showcase-buttons">
                     <a href="drivetech.html" class="btn btn-primary">Alusta õppimist &gt;</a>
                     <a href="gallery.html" class="btn btn-outline">Vaata galeriid</a>
@@ -63,28 +63,28 @@
             <a href="drivetech.html" class="card">
                 <div class="icon-wrapper"><img src="img/icon-lightning.png" alt="Sõidutehnika"></div>
                 <h3>SÕIDUTEHNIKA</h3>
-                <p>Õigest kehaasendist kuni hüpeteni — selged samm-sammulised juhendid ja praktilised harjutused, mis aitavad sul rajal enesekindlamalt sõita.</p>
+                <p>Õigest kehaasendist kuni hüpeteni leiad siit selged samm-sammulised juhendid ja praktilised harjutused, mis aitavad sul rajal enesekindlamalt sõita.</p>
                 <span class="card-link">Loe edasi &gt;</span>
             </a>
 
             <a href="maintenance.html" class="card">
                 <div class="icon-wrapper"><img src="img/icon-info.png" alt="Hooldus"></div>
                 <h3>HOOLDUS</h3>
-                <p>Korralikult hooldatud ratas sõidab paremini ja kestab kauem. Leiad siit kontrollnimekirjad ja hooldusjuhised igaks olukorraks.</p>
+                <p>Korralikult hooldatud ratas sõidab paremini ja kestab kauem. Siit leiad kontrollnimekirjad ja hooldusjuhised igaks olukorraks.</p>
                 <span class="card-link">Loe edasi &gt;</span>
             </a>
 
             <a href="equipment.html" class="card">
                 <div class="icon-wrapper"><img src="img/icon-shield.png" alt="Varustus"></div>
                 <h3>VARUSTUS</h3>
-                <p>Enne rajale minekut veendu, et sul on õige kaitsmevarustus. Siin on kogu vajalik info — alates kiivrist kuni saabasteni.</p>
+                <p>Enne rajale minekut veendu, et sul on õige kaitsmevarustus. Siin on kogu vajalik teave kiivrist kuni saabasteni.</p>
                 <span class="card-link">Loe edasi &gt;</span>
             </a>
 
             <a href="gallery.html" class="card">
                 <div class="icon-wrapper"><img src="img/icon-bulb.png" alt="Galerii"></div>
                 <h3>GALERII</h3>
-                <p>Vaata pilte päris krossiradadelt — kurvid, hüpped ja see tunne, mida sõnad ei suuda päris hästi kirjeldada.</p>
+                <p>Vaata pilte päris krossiradadelt: kurvid, hüpped ja see tunne, mida sõnad ei suuda päris hästi kirjeldada.</p>
                 <span class="card-link">Loe edasi &gt;</span>
             </a>
         </div>
@@ -99,7 +99,7 @@
         <div class="tips-grid">
             <div class="tip-card">
                 <div class="tip-icon-box"><img src="img/icon-lightning-blue.png" alt="Vihje"></div>
-                <p>Kontrolli rehvirõhku enne igat sõitu — see on üks lihtsaimaid viise, kuidas haardumist ja sõidutunnet parandada.</p>
+                <p>Kontrolli rehvirõhku enne igat sõitu. See on üks lihtsaimaid viise haardumist ja sõidutunnet parandada.</p>
             </div>
 
             <div class="tip-card">
@@ -109,7 +109,7 @@
 
             <div class="tip-card">
                 <div class="tip-icon-box"><img src="img/icon-shield-blue.png" alt="Vihje"></div>
-                <p>Ratta pesemine on hoolduse osa, mitte ainult esteetika. Puhasel rattal on probleeme palju lihtsam märgata.</p>
+                <p>Ratta pesemine on hoolduse osa, mitte ainult esteetika. Puhtal rattal on probleeme palju lihtsam märgata.</p>
             </div>
         </div>
     </section>
@@ -118,7 +118,7 @@
         <div class="about-grid">
             <div class="about-content">
                 <h2>ROHKEM KUI LIHTSALT HOBI</h2>
-                <p>Motokross õpetab distsipliini, tehnikat ja visadust — see on elustiil. Meie eesmärk on anda sulle tugev alus, et saaksid iga sõitu nautida turvaliselt ja täie enesekindlusega.</p>
+                <p>Motokross õpetab distsipliini, tehnikat ja visadust. See on elustiil. Meie eesmärk on anda sulle tugev alus, et saaksid iga sõitu nautida turvaliselt ja täie enesekindlusega.</p>
 
                 <ul class="about-list">
                     <li><span class="list-icon">&gt;</span><strong>Selged juhendid algajatele</strong></li>
@@ -128,7 +128,7 @@
             </div>
 
             <div class="about-image-box">
-                <img src="img/action-shot.jpg" alt="Krossirada hüppe" class="about-img">
+                <img src="img/action-shot.jpg" alt="Krossirada hüppega" class="about-img">
             </div>
         </div>
     </section>
@@ -179,11 +179,11 @@
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-  window.addEventListener('scroll', function() {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-  });
+    window.addEventListener('scroll', function() {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
 
-  navMenu.querySelectorAll(function (link) {
+    navMenu.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
             navMenu.classList.remove('nav-open');
             menuToggle.classList.remove('is-open');

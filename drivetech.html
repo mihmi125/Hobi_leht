@@ -57,7 +57,7 @@
                     Õige kehaasend on krossisõidu alus. Kui hoiad end õiges positsioonis, saab ratas sinu all vabalt liikuda, samas kui sina säilitad täieliku kontrolli.
                 </p>
                 <ol class="numbered-list">
-                    <li><div class="list-number">1</div><div class="list-text">Küünarnukid üles ja väljapoole — nagu tiivad.</div></li>
+                    <li><div class="list-number">1</div><div class="list-text">Küünarnukid üles ja väljapoole nagu tiivad.</div></li>
                     <li><div class="list-number">2</div><div class="list-text">Seisa päkkadel, mitte jalatalla keskosal.</div></li>
                     <li><div class="list-number">3</div><div class="list-text">Suru põlved kütusepaagi vastu.</div></li>
                     <li><div class="list-number">4</div><div class="list-text">Vaata otse ette, mitte alla esiporilauale.</div></li>
@@ -80,7 +80,7 @@
                 <ol class="numbered-list">
                     <li><div class="list-number">1</div><div class="list-text">Istu sadula etteossa, lähemale paagile.</div></li>
                     <li><div class="list-number">2</div><div class="list-text">Siruta sisemine jalg ette, suunates seda esiratta poole.</div></li>
-                    <li><div class="list-number">3</div><div class="list-text">Hoia välimine küünarnukk üleval ja suru välimist jalarauast.</div></li>
+                    <li><div class="list-number">3</div><div class="list-text">Hoia välimine küünarnukk üleval ja suru välimisest jalarauda.</div></li>
                     <li><div class="list-number">4</div><div class="list-text">Kalluta ratast, mitte oma keha.</div></li>
                     <li><div class="list-number">5</div><div class="list-text">Hoia gaas ühtlane läbi kogu kurvi.</div></li>
                 </ol>
@@ -115,12 +115,12 @@
                 <h2>ÕHK JA HÜPPED</h2>
                 <div class="section-bar--sm"></div>
                 <p class="section-intro">
-                    Hüpped on krossi üks põnevamaid osi, aga need nõuavad täpset ajastust ja enesekindlust. Ära kiirusta — lase tehnika tulla loomulikult.
+                    Hüpped on krossi üks põnevamaid osi, kuid need nõuavad täpset ajastust ja enesekindlust. Ära kiirusta: lase tehnikal tulla loomulikult.
                 </p>
                 <ol class="numbered-list">
                     <li><div class="list-number">1</div><div class="list-text">Hoia ühtlast gaasi kuni hüppe harjani.</div></li>
-                    <li><div class="list-number">2</div><div class="list-text">Ole rünnakuasendis — keskel, tasakaalus.</div></li>
-                    <li><div class="list-number">3</div><div class="list-text">Ära tõmba juhtrauast — lase rattal ise tõusta.</div></li>
+                    <li><div class="list-number">2</div><div class="list-text">Ole rünnakuasendis: keskel ja tasakaalus.</div></li>
+                    <li><div class="list-number">3</div><div class="list-text">Ära tõmba juhtrauas: lase rattal ise tõusta.</div></li>
                     <li><div class="list-number">4</div><div class="list-text">Maandu mõlemale rattale korraga või kergelt tagarattale ees.</div></li>
                     <li><div class="list-number">5</div><div class="list-text">Lisa maandumisel veidi gaasi, et lööki pehmendada.</div></li>
                 </ol>
@@ -141,7 +141,7 @@
                     <span class="duration"><img src="img/icon-clock.png" alt="aeg">15 min</span>
                 </div>
                 <h3>KAHEKSATE SÕIT</h3>
-                <p>Sõida kaheksat kujundit ümber kahe tähise. See harjutus arendab ratta tunnetust, kallutamist ja jala õiget kasutust kurvides.</p>
+                <p>Sõida kaheksakujulist trajektoori ümber kahe tähise. See harjutus arendab ratta tunnetust, kallutamist ja jala õiget kasutust kurvides.</p>
                 <span class="card-link">Vaata täpsemalt &gt;</span>
             </a>
 
@@ -151,7 +151,7 @@
                     <span class="duration"><img src="img/icon-clock.png" alt="aeg">20 min</span>
                 </div>
                 <h3>PÜSTISEISTES SÕIT</h3>
-                <p>Läbi terve ringi püstiseistes — ka kurvides. See sunnib sind leidma õige tasakaalupunkti ja õppima jalgadega juhtima.</p>
+                <p>Läbi terve ringi püstiseistes, ka kurvides. See sunnib sind leidma õige tasakaalupunkti ja õppima jalgadega juhtima.</p>
                 <span class="card-link">Vaata täpsemalt &gt;</span>
             </a>
 
@@ -181,7 +181,7 @@
                     <span class="duration"><img src="img/icon-clock.png" alt="aeg">10 min</span>
                 </div>
                 <h3>ÜHE KÄEGA SÕIT</h3>
-                <p>Sõida sirgel teel ühe käega. See näitab, kui palju tööd teevad tegelikult su jalad ja kehatüvi — käed on vaid täiendavaks toeks.</p>
+                <p>Sõida sirgel teel ühe käega. See näitab, kui palju tööd teevad tegelikult su jalad ja kehatüvi: käed on vaid täiendavaks toeks.</p>
                 <span class="card-link">Vaata täpsemalt &gt;</span>
             </a>
 
@@ -242,11 +242,11 @@
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-  window.addEventListener('scroll', function() {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-  });
+    window.addEventListener('scroll', function() {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
 
-  navMenu.querySelectorAll(function (link) {
+    navMenu.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
             navMenu.classList.remove('nav-open');
             menuToggle.classList.remove('is-open');

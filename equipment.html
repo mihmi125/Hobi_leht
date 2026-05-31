@@ -37,7 +37,7 @@
     <div class="container">
         <h1>VARUSTUS JA KAITSMEVARUSTUS</h1>
         <p class="page-lead">
-            Õige varustus on ohutuse alus. Siit leiad kõik, mida sul krossisõiduks vaja läheb — nii endale kui rattale.
+            Õige varustus on ohutuse alus. Siit leiad kõik, mida sul krossisõiduks vaja läheb: nii endale kui rattale.
         </p>
     </div>
 </section>
@@ -53,7 +53,7 @@
                     <h3>KIIVER</h3>
                     <p>Kiiver on krossisõitja tähtsaim varustusese. Vali sobiva suurusega kiiver, mis istub tihedalt ja pakub head kaitset kõigist suundadest.</p>
                     <ul class="eq-checklist">
-                        <li>Hea ventileerimine</li>
+                        <li>Hea ventilatsioon</li>
                         <li>Kindel ja mugav istuvus</li>
                     </ul>
                 </div>
@@ -64,7 +64,7 @@
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-critical">OLULINE</span>
                     <h3>PRILLID</h3>
-                    <p>Krossiraja tolmu ja prahi eest kaitsevad prillid on hädavajalikud. Investeeri kvaliteetsetesse prillides — selge nägemine rajal on ohutu sõidu eeldus.</p>
+                    <p>Krossiraja tolmu ja prahi eest kaitsevad prillid on hädavajalikud. Investeeri kvaliteetsetesse prillides: selge nägemine rajal on ohutu sõidu eeldus.</p>
                     <ul class="eq-checklist">
                         <li>Mugav vahtpadjestus</li>
                         <li>Hea õhuvahetus</li>
@@ -106,7 +106,7 @@
                     <p>Head krossisaapikud on kõrged ja jäigad, et kaitsta pahkluud ning aidata säilitada õiget asendit pedaalide peal.</p>
                     <ul class="eq-checklist">
                         <li>Reguleeritavad klambrid</li>
-                        <li>Hingav ja vastupidav</li>
+                        <li>Hingav ja vastupidav materjal</li>
                     </ul>
                 </div>
             </div>
@@ -138,7 +138,7 @@
             </div>
 
             <div class="equipment-card">
-                <img src="img/neck-brace.jpg" alt="Kaelane" class="equipment-card-img">
+                <img src="img/neck-brace.jpg" alt="Kaelakaitse" class="equipment-card-img">
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-recommended">SOOVITUSLIK</span>
                     <h3>KAELAKAITSE</h3>
@@ -151,11 +151,11 @@
             </div>
 
             <div class="equipment-card">
-                <img src="img/bike.jpg" alt="Leatt GPX Pro kaelakaitse (Foto: Motocross Action Magazine)" title="Foto allikas: Motocross Action Magazine" class="equipment-card-img">
+                <img src="img/bike.jpg" alt="Krossiratas" class="equipment-card-img">
                 <div class="equipment-card-body">
                     <span class="eq-badge eq-badge-required">NÕUTAV</span>
                     <h3>RATTA KORRASOLEK</h3>
-                    <p>Enne rajale minekut veendu, et su ratas on tehniliselt täiesti korras. See ei hoia ära mitte ainult katkiseid detaile, vaid on sinu turvalisuse garantii.</p>
+                    <p>Enne rajale minekut veendu, et su ratas on tehniliselt täiesti korras. See ei taga mitte ainult paremat sõiduelamust, vaid on ka sinu turvalisuse alus.</p>
                     <ul class="eq-checklist">
                         <li>Sobivad rehvid ja õige rehvirõhk</li>
                         <li>Korralikult reguleeritud pidurid</li>
@@ -211,11 +211,11 @@
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-  window.addEventListener('scroll', function() {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-  });
+    window.addEventListener('scroll', function() {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
 
-  navMenu.querySelectorAll(function (link) {
+    navMenu.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
             navMenu.classList.remove('nav-open');
             menuToggle.classList.remove('is-open');
