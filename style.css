@@ -98,7 +98,7 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     font-size: 15px;
     letter-spacing: 1px;
     transition: background var(--transition), border-color var(--transition),
-                transform var(--transition), box-shadow var(--transition);
+    transform var(--transition), box-shadow var(--transition);
 }
 .btn:active { transform: translateY(1px); }
 
