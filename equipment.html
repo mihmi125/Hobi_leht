@@ -211,7 +211,11 @@
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    navMenu.querySelectorAll('a').forEach(function (link) {
+  window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  navMenu.querySelectorAll(function (link) {
         link.addEventListener('click', function () {
             navMenu.classList.remove('nav-open');
             menuToggle.classList.remove('is-open');

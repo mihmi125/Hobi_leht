@@ -32,59 +32,118 @@
   </nav>
 </header>
 
-<section class="page-header">
-  <div class="container">
-    <h1>PILDIGALERII</h1>
-  </div>
-</section>
-
 <main class="gallery-wrapper">
   <div class="container">
+
+    <!-- Category filter tabs -->
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" data-filter="all">Kõik</button>
+      <button class="gallery-tab" data-filter="riding">Sõidutehnika</button>
+      <button class="gallery-tab" data-filter="maintenance">Hooldus</button>
+      <button class="gallery-tab" data-filter="equipment">Varustus</button>
+    </div>
+
     <div class="slideshow">
 
       <div class="slideshow-meta">
-        <h2 id="meta-title">ADRENALIIN RAJAL</h2>
-        <p id="meta-desc">Koge kiirust, tolmu ja täielikku pühendumist igal kurvisektsioonil.</p>
+        <div class="slide-category-tag" id="meta-category">SÕIDUTEHNIKA</div>
+        <h2 id="meta-title">KROSSISÕIT KURVIS</h2>
+        <p id="meta-desc">Täielik kontroll kiiruse ja gravitatsiooniga — kogu keha töötab ühtse süsteemina.</p>
 
         <div class="meta-controls">
-          <button class="slide-nav" onclick="plusSlides(-1)">&#10094;</button>
-          <button class="slide-nav" onclick="plusSlides(1)">&#10095;</button>
+          <button class="slide-nav" onclick="plusSlides(-1)" aria-label="Eelmine">&#10094;</button>
+          <button class="slide-nav" onclick="plusSlides(1)" aria-label="Järgmine">&#10095;</button>
+        </div>
+
+        <div class="slideshow-meta-footer">
+          <div class="slide-counter"><span id="current-num">01</span><span class="counter-sep">/</span><span id="total-num">15</span></div>
+          <div class="autoplay-indicator" id="autoplayIndicator" title="Automaatesitus käib"></div>
         </div>
       </div>
 
       <div class="slideshow-viewport">
-
-        <div class="slide" data-title="KROSSISÕIT KURVIS">
+        <!-- RIDING category -->
+        <div class="slide" data-title="KROSSISÕIT KURVIS" data-desc="Täielik kontroll kiiruse ja gravitatsiooniga — kogu keha töötab ühtse süsteemina." data-category="riding" data-label="SÕIDUTEHNIKA">
           <div class="slide-overlay"></div>
           <img src="img/riding.jpg" alt="Krossisõit kurvis">
         </div>
 
-        <div class="slide" data-title="ÕIGE RÜNNAKUASEND">
+        <div class="slide" data-title="ÕIGE RÜNNAKUASEND" data-desc="Küünarnukid üles, pilk ette, kehakaal keskel — klassikaline asend, mis annab kontrolli kõigis olukordades." data-category="riding" data-label="SÕIDUTEHNIKA">
           <div class="slide-overlay"></div>
           <img src="img/attack-position.jpg" alt="Rünnakuasend rajal">
         </div>
 
-        <div class="slide" data-title="KURVITEHNIKA">
+        <div class="slide" data-title="KURVITEHNIKA" data-desc="Sisemine jalg ette, välimine küünarnukk üleval — kurvides kaotatakse kõige rohkem aega, aga ka võidetakse." data-category="riding" data-label="SÕIDUTEHNIKA">
           <div class="slide-overlay"></div>
           <img src="img/turns.jpg" alt="Kurvitehnika krossis">
         </div>
 
-        <div class="slide" data-title="TÄIELIK LEND">
+        <div class="slide" data-title="TÄIELIK LEND" data-desc="Hüpped nõuavad täpset ajastust, ühtlast gaasi ja tugevat närvi — aga maandumine on see, mida treenida." data-category="riding" data-label="SÕIDUTEHNIKA">
           <div class="slide-overlay"></div>
           <img src="img/action-shot.jpg" alt="Hüpe õhus">
         </div>
 
-        <div class="slide-counter"><span id="current-num">01</span> / <span id="total-num">04</span></div>
+        <!-- MAINTENANCE category -->
+        <div class="slide" data-title="KETI HOOLDUS" data-desc="Puhas ja õigesti pingutatud kett on võimsuse ülekande selgroog — regulaarne hooldus pikeneb nii kett kui hammasrattad." data-category="maintenance" data-label="HOOLDUS">
+          <div class="slide-overlay"></div>
+          <img src="img/chain.jpg" alt="Ratta kett">
+        </div>
+
+        <div class="slide" data-title="ÕHUFILTRI VAHETUS" data-desc="Krossiraja tolm ummistab filtri kiiresti — puhas õhufilter on mootori esimene kaitseliin ja jõudluse garantii." data-category="maintenance" data-label="HOOLDUS">
+          <div class="slide-overlay"></div>
+          <img src="img/air_filter.jpg" alt="Õhufilter">
+        </div>
+
+        <!-- EQUIPMENT category -->
+        <div class="slide" data-title="KIIVER — TÄHTSAIM VARUSTUSESE" data-desc="Kvaliteetne kiiver päästab elusid. Vali sertifitseeritud mudel, mis istub tihedalt ja pakub kaitset igast suunast." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/helmet.jpg" alt="Krossikiiver">
+        </div>
+
+        <div class="slide" data-title="PRILLID" data-desc="Tolm, muda ja kivid lendavad rajal kõikjale — head prillid hoiavad su nägemise selgena kogu sõidu vältel." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/goggles.jpg" alt="Krossiprillid">
+        </div>
+
+        <div class="slide" data-title="RINDKAITSE" data-desc="Kombineeritud rind- ja seljakaitse neelab löögienergiat, kaitstes kriitilisi kehapiirkondi kukkumiste ja löökide eest." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/chest-protector.jpg" alt="Rindkaitse">
+        </div>
+
+        <div class="slide" data-title="KINDAD" data-desc="Pehmendatud peopesad vähendavad väsimust ja kaitsevad kukkumisel — õige suurus tagab tunde juhtrauast." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/gloves.jpg" alt="Krossikindad">
+        </div>
+
+        <div class="slide" data-title="KROSSISAAPIKUD" data-desc="Kõrge ja jäik konstruktsioon kaitseb pahkluud kõige ohtlikumates olukordades, andes kindla tunde pedaalidel." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/boots.jpg" alt="Krossisaapikud">
+        </div>
+
+        <div class="slide" data-title="KROSSISÄRK" data-desc="Kerg ja hingav materjal hoiab sind jahedana, erksa värviga särk parandab nähtavust kaassõitjatele rajal." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/jersey.jpg" alt="Krossisärk">
+        </div>
+
+        <div class="slide" data-title="KROSSIPÜKSID" data-desc="Tugevdatud põlvepiirkonnaga püksid kaitsevad kukkumisel ja tagavad täieliku liikumisvabaduse sadulas." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/pants.jpg" alt="Krossipüksid">
+        </div>
+
+        <div class="slide" data-title="KAELAKAITSE" data-desc="Vähendab kaela vigastuse riski kukkumise korral — eriti soovitatav algajatele, kes õpivad hüpetega toime tulema." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/neck-brace.jpg" alt="Kaelakaitse">
+        </div>
+
+        <div class="slide" data-title="RATTA KORRASOLEK" data-desc="Tehniliselt korras ratas on nii ohutuse kui jõudluse alus — kontrolli enne iga sõitu rehvid, pidurid ja raam." data-category="equipment" data-label="VARUSTUS">
+          <div class="slide-overlay"></div>
+          <img src="img/bike.jpg" alt="Krossiratas">
+        </div>
       </div>
 
     </div>
 
-    <div class="slide-dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-    </div>
+    <div class="slide-dots" id="slideDots"></div>
 
   </div>
 </main>
@@ -124,59 +183,133 @@
 </footer>
 
 <script>
-  let slideIndex = 1;
-  showSlides(slideIndex);
+  /* ── State ── */
+  let allSlides = [];
+  let filteredIndices = [];
+  let activePos = 0;
+  let slideTimer = null;
+  let currentFilter = 'all';
 
-  let slideTimer = setInterval(function () { plusSlides(1); }, 7000);
+  /* ── Init ── */
+  window.addEventListener('DOMContentLoaded', function () {
+    allSlides = Array.from(document.querySelectorAll('.slide'));
+    applyFilter('all');
+  });
 
+  /* ── Filter ── */
+  document.querySelectorAll('.gallery-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.gallery-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilter(currentFilter);
+    });
+  });
+
+  function applyFilter(filter) {
+    filteredIndices = [];
+    allSlides.forEach(function (slide, i) {
+      const match = filter === 'all' || slide.dataset.category === filter;
+      slide.style.display = 'none';
+      slide.classList.remove('is-active');
+      if (match) filteredIndices.push(i);
+    });
+    activePos = 0;
+    rebuildDots();
+    showCurrent();
+    restartTimer();
+  }
+
+  /* ── Dots ── */
+  function rebuildDots() {
+    const container = document.getElementById('slideDots');
+    container.innerHTML = '';
+    filteredIndices.forEach(function (_, pos) {
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.addEventListener('click', function () { goTo(pos); });
+      container.appendChild(dot);
+    });
+    updateDots();
+    document.getElementById('total-num').textContent = String(filteredIndices.length).padStart(2, '0');
+  }
+
+  function updateDots() {
+    document.querySelectorAll('.dot').forEach(function (d, i) {
+      d.classList.toggle('active', i === activePos);
+    });
+  }
+
+  /* ── Navigation ── */
   function plusSlides(n) {
+    restartTimer();
+    goTo(activePos + n);
+  }
+
+  function goTo(pos) {
+    const len = filteredIndices.length;
+    if (len === 0) return;
+    activePos = ((pos % len) + len) % len;
+    showCurrent();
+  }
+
+  function showCurrent() {
+    if (filteredIndices.length === 0) return;
+
+    // Hide all
+    allSlides.forEach(function (s) {
+      s.style.display = 'none';
+      s.classList.remove('is-active');
+    });
+
+    const idx = filteredIndices[activePos];
+    const slide = allSlides[idx];
+    slide.style.display = 'block';
+    setTimeout(function () { slide.classList.add('is-active'); }, 20);
+
+    // Update meta
+    document.getElementById('meta-title').textContent    = slide.dataset.title    || '';
+    document.getElementById('meta-desc').textContent     = slide.dataset.desc     || '';
+    document.getElementById('meta-category').textContent = slide.dataset.label    || '';
+    document.getElementById('current-num').textContent   = String(activePos + 1).padStart(2, '0');
+
+    updateDots();
+  }
+
+  /* ── Autoplay ── */
+  function restartTimer() {
     clearInterval(slideTimer);
-    showSlides(slideIndex += n);
-    slideTimer = setInterval(function () { plusSlides(1); }, 7000);
+    slideTimer = setInterval(function () { goTo(activePos + 1); }, 6000);
   }
 
-  function currentSlide(n) {
-    clearInterval(slideTimer);
-    showSlides(slideIndex = n);
-    slideTimer = setInterval(function () { plusSlides(1); }, 7000);
-  }
+  /* ── Keyboard ── */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  { plusSlides(-1); }
+    if (e.key === 'ArrowRight') { plusSlides(1); }
+  });
 
-  function showSlides(n) {
-    const slides = document.getElementsByClassName("slide");
-    const dots   = document.getElementsByClassName("dot");
+  /* ── Swipe ── */
+  let touchStartX = 0;
+  const vp = document.querySelector('.slideshow-viewport');
+  vp.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  vp.addEventListener('touchend',   function (e) {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) plusSlides(dx < 0 ? 1 : -1);
+  });
 
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1)             slideIndex = slides.length;
+  // Scrolled navbar shadow
+  window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  });
 
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-      slides[i].classList.remove("is-active");
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(() => slides[slideIndex - 1].classList.add("is-active"), 20);
-    dots[slideIndex - 1].classList.add("active");
-
-    document.getElementById("meta-title").innerText = slides[slideIndex - 1].dataset.title || "";
-    document.getElementById("meta-desc").innerText  = slides[slideIndex - 1].dataset.desc || "";
-
-    document.getElementById("current-num").innerText = String(slideIndex).padStart(2, "0");
-    document.getElementById("total-num").innerText   = String(slides.length).padStart(2, "0");
-  }
-
-
+  /* ── Hamburger ── */
   const menuToggle = document.getElementById('menuToggle');
   const navMenu    = document.getElementById('navMenu');
-
   menuToggle.addEventListener('click', function () {
     const isOpen = navMenu.classList.toggle('nav-open');
     menuToggle.classList.toggle('is-open', isOpen);
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-
   navMenu.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       navMenu.classList.remove('nav-open');
