@@ -368,21 +368,21 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--dark-color);
 }
 
 .list-icon {
     background-color: #ffedd5;
     color: var(--primary-color);
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 19px;
     flex-shrink: 0;
 }
 
@@ -474,8 +474,8 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
 .list-number {
     background-color: var(--primary-color);
     color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -495,6 +495,7 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 .guide-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.guide-image iframe { width: 100%; height: 100%; display: block; border: none; }
 
 
 /* 11. Exercises grid (drivetech) ------------------------------------------- */
@@ -535,7 +536,13 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     color: var(--grey-500);
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+}
+.duration img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.7;
 }
 
 
@@ -611,7 +618,6 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
 .gallery-wrapper {
     background-color: #11141a;
     padding: 60px 0;
-    margin-top: 20px;
     border-top: 4px solid var(--primary-color);
 }
 
@@ -724,7 +730,7 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
 
 #current-num { color: var(--primary-color); }
 
-.slide-dots  { text-align: center; margin-top: 35px; }
+.slide-dots  { text-align: center; margin-top: 35px; padding-bottom: 10px; }
 
 .dot {
     cursor: pointer;
@@ -750,6 +756,10 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     color: #9CA3AF;
     padding: 60px 0;
     margin-top: 60px;
+}
+
+main.gallery-wrapper + #main-footer {
+    margin-top: 0;
 }
 
 .footer-grid {
