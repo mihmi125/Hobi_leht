@@ -760,6 +760,42 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
     flex-grow: 1;
 }
 
+.slide-read-more {
+    display: none;
+    margin-top: 14px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.20);
+    color: rgba(255,255,255,0.65);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all var(--transition);
+    flex-shrink: 0;
+}
+.slide-read-more:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+}
+
+.meta-desc-expanded {
+    display: none;
+    margin-top: 14px;
+    background: rgba(249,133,31,0.07);
+    border-left: 3px solid var(--primary-color);
+    padding: 14px 16px;
+    border-radius: 0 8px 8px 0;
+    color: rgba(160,174,192,0.95);
+    font-size: 15px;
+    line-height: 1.75;
+    flex-shrink: 0;
+}
+
 .meta-controls { display: flex; gap: 12px; margin-top: 36px; }
 
 .slide-nav {
@@ -873,7 +909,7 @@ h1, h2, h3, h4 { font-family: "Bebas Neue", sans-serif; }
 
 #main-footer {
     background-color: var(--dark-color);
-    color: #9CA3AF;
+    color: var(--light-color);
     padding: 60px 0;
     margin-top: 60px;
 }
@@ -926,7 +962,7 @@ main.gallery-wrapper + #main-footer { margin-top: 0; }
 .footer-nav ul li a:hover { color: var(--primary-color); }
 
 .footer-info p           { font-size: 15px; margin-bottom: 8px; }
-.footer-info .disclaimer { font-size: 12px; color: var(--grey-500); margin-top: 12px; }
+.footer-info .disclaimer { font-size: 12px; color: var(--light-color); margin-top: 12px; }
 
 
 /* 15. Media queries -------------------------------------------------------- */
@@ -941,6 +977,8 @@ main.gallery-wrapper + #main-footer { margin-top: 0; }
     .slideshow-viewport     { height: 420px; order: 1; }
     .slideshow-meta         { padding: 36px 40px; order: 2; }
     .slideshow-meta h2      { font-size: 32px; }
+    .slide-read-more        { display: inline-block; }
+    #meta-desc              { display: none; }
 
     .features-grid          { grid-template-columns: repeat(2, 1fr); }
 

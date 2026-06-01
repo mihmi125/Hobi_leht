@@ -52,6 +52,8 @@
         <div class="slide-category-tag" id="meta-category">SÕIDUTEHNIKA</div>
         <h2 id="meta-title">KROSSISÕIT KURVIS</h2>
         <p id="meta-desc">Täielik kontroll kiiruse ja gravitatsiooniga: kogu keha töötab ühtse süsteemina.</p>
+        <button class="slide-read-more" id="readMoreBtn">Loe rohkem ↓</button>
+        <div class="meta-desc-expanded" id="metaDescExpanded" aria-hidden="true"></div>
 
         <div class="meta-controls">
           <button class="slide-nav" onclick="plusSlides(-1)" aria-label="Eelmine">&#10094;</button>
@@ -118,7 +120,7 @@
           <img src="img/gloves.webp" alt="Krossikindad">
         </div>
 
-        <div class="slide" data-title="KROSSISAAPIKUD" data-desc="Kõrge ja jäik konstruktsioon kaitseb pahkluud kõige ohtlikumates olukordades, andes kindla tunde pedaalidel." data-category="equipment" data-label="VARUSTUS">
+        <div class="slide" data-title="KROSSISAAPAD" data-desc="Kõrge ja jäik konstruktsioon kaitseb pahkluud kõige ohtlikumates olukordades, andes kindla tunde pedaalidel." data-category="equipment" data-label="VARUSTUS">
           <div class="slide-overlay"></div>
           <img src="img/boots.webp" alt="Krossisaapikud">
         </div>
@@ -276,6 +278,12 @@
     document.getElementById('meta-category').textContent = slide.dataset.label    || '';
     document.getElementById('current-num').textContent   = String(activePos + 1).padStart(2, '0');
 
+    // Reset loe rohkem
+    var expandedBox = document.getElementById('metaDescExpanded');
+    var readMoreBtn = document.getElementById('readMoreBtn');
+    if (expandedBox) { expandedBox.style.display = 'none'; }
+    if (readMoreBtn) { readMoreBtn.textContent = 'Loe rohkem ↓'; }
+
     updateDots();
   }
 
@@ -319,6 +327,20 @@
       menuToggle.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+  /* ── Loe rohkem ── */
+  document.getElementById('readMoreBtn').addEventListener('click', function () {
+    var box = document.getElementById('metaDescExpanded');
+    var btn = document.getElementById('readMoreBtn');
+    var isOpen = box.style.display === 'block';
+    if (isOpen) {
+      box.style.display = 'none';
+      btn.textContent = 'Loe rohkem ↓';
+    } else {
+      box.textContent = document.getElementById('meta-desc').textContent;
+      box.style.display = 'block';
+      btn.textContent = 'Sulge ↑';
+    }
   });
 </script>
 
